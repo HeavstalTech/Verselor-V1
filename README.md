@@ -1,7 +1,7 @@
 ### Verselor V1 By Heavstal Tech.
 
 
-[VERSELOR V1 PICTURE](./PromiseMedia/VerselorV1)
+[VERSELOR V1 PICTURE](./PromiseMedia/VerselorV1.jpg)
 
 ## Description
 **This is a multifunctional/multi-device/multi-purpose BOT built by HEAVSTAL TECH to Simplify User WhatsApp Experience To Thr Fullest Extent.**
