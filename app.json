@@ -1,0 +1,18 @@
+{
+  "name": "VOID-V1",
+  "description": "Powerful Multi-Device, Multifunctional, Multi-purpose WhatsApp bot, built by Heavstal Tech. 2025",
+  "repository": "https://github.com/Promise818/Void-V1",
+  "logo": "https://files.catbox.moe/ieewpf.jpg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "whatsapp automation", "multi device"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
