@@ -29,7 +29,7 @@
 **┣ Prefix:** _[ . ]_<br>
 **┣ Menu Style:** _v1_<br>
 **┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_<br>
-**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_<br>
+**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_
 **┣ Public Mode:** _On_<br>
 **┣ Sleep Mode:** _Off_<br>
 **┣ Group Only:** _Off_<br>
@@ -67,6 +67,12 @@
 > 5.  Navigate to your server/hosts console and start the deployment, it will take *approximately* 2 minutes
 > 6.  When prompted, input your Authentication Code (Auth Code)
 > 7.  A Qr Code will appear, Go to WhatsApp → Linked Devices → Link a Device and scan the Qr code
+
+# While Using Render
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](
+https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)
+**Important Note:** _When deploying to render, make sure to your MONOGOSE URI at *[settings/config.js](https://github.com/HeavstalTech/Verselor-V1/blob/main/settings/config.js)*_
+
 
 # While Using Termux / Ubuntu  / Terminal (With Pair Code)
 * Instructions are coming soon
