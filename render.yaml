@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: verselor-v1
+    runtime: node
+    plan: free
+
+    buildCommand: npm install
+    startCommand: npm start
+
+    autoDeploy: true    
