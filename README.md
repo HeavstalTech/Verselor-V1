@@ -70,7 +70,7 @@
 
 # While Using Render
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](
-https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)
+https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)<br>
 **Important Note:** _When deploying to render, make sure to your MONOGOSE URI at *[settings/config.js](https://github.com/HeavstalTech/Verselor-V1/blob/main/settings/config.js)*_
 
 
