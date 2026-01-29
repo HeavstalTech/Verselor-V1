@@ -1,6 +1,6 @@
 <h1 align="center">VERSELOR-V1 BY HEAVSTAL TECH™<br></h1>
 <p align="center">
-<img src="https://files.catbox.moe/a2ullf.jpg" />
+<img src="https://files.catbox.moe/a2ullf.jpg" width="300" height="300"/>
 </p>
 
 <p align="center">
@@ -20,16 +20,16 @@
 **┣ Version:** _1.0.0 (Latest)_<br>
 **┣ Maintained:**  _[ YES ]_<br>
 **┣ Developer:** _HEAVSTAL TECH_<br>
-**┣ Total Commands:** _306 (as of Jan 19, 2026)_<br>
+**┣ Total Commands:** _306 (as of Jan 29, 2026)_<br>
 **┣ Created On:** _January 10th, 2026_<br>
 
 
-## BOT SEETINGS (Defult)
+## BOT SETTINGS (Default)
 
 **┣ Prefix:** _[ . ]_<br>
 **┣ Menu Style:** _v1_<br>
 **┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_<br>
-**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_
+**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_<br>
 **┣ Public Mode:** _On_<br>
 **┣ Sleep Mode:** _Off_<br>
 **┣ Group Only:** _Off_<br>
@@ -39,77 +39,123 @@
 **┣ Auto Record:** _Off_<br>
 **┣ Auto Typing:** _Off_<br>
 **┣ Auto Read:** _Off_<br>
-**┣ Auto ReacordType:** _Off_<br>
+**┣ Auto RecordType:** _Off_<br>
 **┣ AutoView Status:** _Off_<br>
 **┣ Auto Bio:** _Off_<br>
 **┣ Warn Limit:** _3_<br>
 **┣ Time Zone:** _Africa/Lagos_<br>
 
-### DEPLOYMENT INSTRUCTIONS
+---
 
-*Fork this repository [Here](https://github.com/HeavstalTech/Verselor-V1/fork)*
-
-# While Using Pair Code:
-> 1. Get Your Authentication Code **(Auth Code)** from: [HERE](https://Heavstal-Bots.vercel.app)
-> 2. Download & Upload the complete file to your Node.js server.
-> 3. Unzip & Enter The "Verselor-V1-main" file, select all and move to "../"
-> 4.  Set the Node version of your hosting environment to version 20x or later (Recommended).
-> 5.  Navigate to your server/hosts console and start the deployment, it will take *approximately* 2 minutes
-> 6.  When prompted, input your Authentication Code (Auth Code)
-> 7. When prompted, input your WhatsApp number & Copy the given 8 digit code
-> 8. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code
-
-# While Using Qr Code
-> 1. Get Your Authentication Code **(Auth Code)** from: [HERE](https://Heavstal-Bots.vercel.app)
-> 2.  Download & Upload the complete file to your Node.js server on your computer or other device
-> 3.  Unzip & Enter The "Verselor-V1-main" file, select all and move to "../"
-> 4.  Set the Node version of your hosting environment to version 20x or later (Recommended).
-> 5.  Navigate to your server/hosts console and start the deployment, it will take *approximately* 2 minutes
-> 6.  When prompted, input your Authentication Code (Auth Code)
-> 7.  A Qr Code will appear, Go to WhatsApp → Linked Devices → Link a Device and scan the Qr code
+### ☁️ CLOUD DEPLOYMENT
 
 # While Using Render
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](
-https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)<br>
-**Important Note:** _When deploying to render, make sure to your MONOGOSE URI at *[settings/config.js](https://github.com/HeavstalTech/Verselor-V1/blob/main/settings/config.js)*_
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)<br>
+**Important Note:** _When deploying to Render, make sure to add your `MONGODB_URI` in the Environment Variables._
 
+# While Using Heroku
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HeavstalTech/Verselor-V1)<br>
+<br>
+**BUILDPACKS:**
+1. `heroku/nodejs`
+2. `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
+3. `https://github.com/clhuang/heroku-buildpack-webp-binaries.git`
 
-# While Using Termux / Ubuntu  / Terminal (With Pair Code)
-* Instructions are coming soon
-* Use you want it to say active 24/7 on termux, don't use `npm start` rather use:
+---
+
+### 📂 WEB PANEL DEPLOYMENT (Upload Method)
+*For users using panels like Pterodactyl, KataBump, or cPanel.*
+
+# Method 1: Using Pair Code
+> 1. Download the complete code as a ZIP file.
+> 2. Upload the file to your Node.js server/panel.
+> 3. Unzip & Enter The "Verselor-V1-main" folder, select all files and move them to the root directory `../`.
+> 4. Set the Node version of your hosting environment to version **20x** or later (Recommended).
+> 5. Navigate to your server console and start the deployment (Click Start or run `npm install && npm start`).
+> 6. Wait approximately 2 minutes for dependencies to install.
+> 7. When prompted in the console, **input your WhatsApp number** (Country Code + Number).
+> 8. A Code will appear. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
+
+# Method 2: Using QR Code
+> 1. Open `settings/config.js` and set `usePairingCode` to `false`.
+> 2. Follow steps 1-5 from above (Upload, Unzip, Start).
+> 3. A QR Code will appear in the console.
+> 4. Go to WhatsApp → Linked Devices → Link a Device and scan the QR code.
+
+---
+
+### 💻 COMMAND LINE INSTALLATION (Termux/VPS)
+
+## `Requirements`
+* [Node.js](https://nodejs.org/en/) (Version 20+)
+* [Git](https://git-scm.com/downloads)
+* [FFmpeg](https://ffmpeg.org/download.html)
+* Any text editor (VS Code, Notepad, etc)
+
+## `For Termux Users`
+**Note:** Do not download Termux from the Play Store. Download it from [F-Droid Here](https://f-droid.org/en/packages/com.termux/).
+
+1. **Update System & Install Dependencies:**
 ```bash
-npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
+apt update && apt upgrade -y
+pkg install git nodejs ffmpeg imagemagick libwebp -y
+pkg install yarn
 ```
- 
-# Clone Repo & Installation dependencies
+
+2. **Clone Repository:**
 ```bash
 git clone https://github.com/HeavstalTech/Verselor-V1.git
-cd Verselor-V1
+cd Verselor-V1-main
+```
 
+3. **Install & Start:**
+```bash
+npm install
 npm start
-``` 
- 
- ## Join Our Channels To Stay Updated
+```
+*Follow the prompts in the terminal to enter your number and get the Pairing Code.*
+
+## `For VPS / Ubuntu / Linux`
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install git nodejs ffmpeg imagemagick libwebp -y
+git clone https://github.com/HeavstalTech/Verselor-V1.git
+cd Verselor-V1
+npm install
+npm start
+```
+
+---
+
+### 🟢 KEEP ACTIVE 24/7 (PM2)
+To keep the bot running in the background (Termux/VPS), do not use `npm start`. Use **PM2** instead:
+
+```bash
+npm install -g pm2
+pm2 start index.js --name verselor
+pm2 save
+pm2 logs
+```
+
+---
+
+## Join Our Channels To Stay Updated
 <p align="center">
-<a href="https://youtube.com/@HeavstalTech"><img src="https://img.shields.io/badge/YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://youtube.com/@HeavstalTech" /><br>
-<a href="https://whatsapp.com/channel/0029VbBcg80KwqSR7dr7do1D"><img src="https://img.shields.io/badge/WhatsApp Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&link=https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20" /><br>
-<a href="https://t.me/promisedv1"><img src="https://img.shields.io/badge/Telegram-00FFFF?style=for-the-badge&logo=telegram&logoColor=white" />
-<a href="https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t"><img src="https://img.shields.io/badge/WhatsApp Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+<a href="https://youtube.com/@Heavstal_Tech"><img src="https://img.shields.io/badge/YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://youtube.com/@Heavstal_Tech" /></a><br>
+<a href="https://whatsapp.com/channel/0029VbBcg80KwqSR7dr7do1D"><img src="https://img.shields.io/badge/WhatsApp Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&link=https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20" /></a><br>
+<a href="https://t.me/promisemdv1"><img src="https://img.shields.io/badge/Telegram-00FFFF?style=for-the-badge&logo=telegram&logoColor=white" /></a>
+<a href="https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t"><img src="https://img.shields.io/badge/WhatsApp Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 </p>
 
 
 ## Buy Me A Coffee / Donate
 
-- [Bank Tranafer](https://heavstal-tech.vercel.app/buy-me-a-coffe)
-- [Paystack](https://heavstal-tech.vercel.app/buy-me-a-coffe)
--
+- [Bank Transfer](https://heavstal-tech.vercel.app/buy-me-a-coffee)
+- [Paystack](https://heavstal-tech.vercel.app/buy-me-a-coffee)
 
 ## Bot Support & Group Chats
 
 - [WhatsApp GC](https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t)
 - [Telegram GC](https://t.me/+OXpT1vvQ5K81MmVk)
--
-
-
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
