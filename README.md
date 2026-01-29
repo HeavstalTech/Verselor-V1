@@ -1,112 +1,109 @@
-# Verselor V1
+<h1 align="center">VERSELOR-V1 BY HEAVSTAL TECH™<br></h1>
+<p align="center">
+<img src="https://files.catbox.moe/a2ullf.jpg" />
+</p>
 
-**Product of Heavstal Tech™**
+<p align="center">
+<a href="https://github.com/HeavstalTech/Verselor-V1/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/HeavstalTech/Verselor-V1?color=blue&style=flat-square"></a>
+<a href="https://github.com/HeavstalTech/Verselor-V1/network/members"><img title="Forks" src="https://img.shields.io/github/forks/HeavstalTech/Verselor-V1?color=red&style=flat-square"></a>
+<a href="https://github.com/HeavstalTech/Verselor-V1/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/HeavstalTech/Verselor-V1?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/HeavstalTech/Verselor-V1"><img title="Open Source" src="https://img.shields.io/badge/Author-Heavstal%20Tech-red?v=103"></a>
+<a href="https://github.com/HeavstalTech/Verselor-V1/"><img title="Size" src="https://img.shields.io/github/repo-size/HeavstalTech/Verselor-V1?style=flat-square&color=green"></a>
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FHeavstalTech%2FVerselor-V1&count_bg=%2379C83D&title_bg=%23555555&icon=probot.svg&icon_color=%2300FF6D&title=hits&edge_flat=false"/></a>
+<a href="https://github.com/HeavstalTech/Verselor-V1/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
+</p>
+ 
+## BOT INFO
+ 
+**┣ Name:** _Verselor V1_
+**┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, & Multi-Tenant WhatsApp bot, built by Heavstal Tech. 2026_
+**┣ Version:** _1.0.0 (Latest)_
+**┣ Maintained:**  _[ YES ]_
+**┣ Developer:** _HEAVSTAL TECH_
+**┣ Total Commands:** _306 (as of Jan 19, 2026)_
+**┣ Created On:** _January 10th, 2026_
 
-![Verselor V1](./PromiseMedia/VerselorV1.jpg)
 
----
+## BOT SEETINGS (Defult)
 
-## Description
+**┣ Prefix:** _[ . ]_
+**┣ Menu Style:** _v1_
+**┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_
+**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_
+**┣ Public Mode:** _On_ 
+**┣ Sleep Mode:** _Off_
+**┣ Group Only:** _Off_
+**┣ Private Only:** _Off_
+**┣ StartUp Message:** _On_
+**┣ Auto React:** _Off_
+**┣ Auto Record:** _Off_
+**┣ Auto Typing:** _Off_
+**┣ Auto Read:** _Off_
+**┣ Auto ReacordType:** _Off_
+**┣ AutoView Status:** _Off_
+**┣ Auto Bio:** _Off_
+**┣ Warn Limit:** _3_
+**┣ Time Zone:** _Africa/Lagos_
 
-Verselor V1 is a multifunctional, multi-device, and multi-purpose automation bot developed by Heavstal Tech. Its primary function is to augment and simplify the user experience on the WhatsApp platform to the fullest extent.
+### DEPLOYMENT INSTRUCTIONS
 
----
+*Fork this repository [Here](https://github.com/HeavstalTech/Verselor-V1/fork)*
 
-### Table of Contents
+# While Using Pair Code:
+> 1. Get Your Authentication Code **(Auth Code)** from: [HERE](https://Heavstal-Bots.vercel.app)
+> 2. Download & Upload the complete file to your Node.js server.
+> 3. Unzip & Enter The "Verselor-V1-main" file, select all and move to "../"
+> 4.  Set the Node version of your hosting environment to version 20x or later (Recommended).
+> 5.  Navigate to your server/hosts console and start the deployment, it will take *approximately* 2 minutes
+> 6.  When prompted, input your Authentication Code (Auth Code)
+> 7. When prompted, input your WhatsApp number & Copy the given 8 digit code
+> 8. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code
 
--   [Feature Showcase](#feature-showcase)
--   [System Recommendations](#system-recommendations)
--   [Deployment Instructions](#deployment-instructions)
--   [Important Notice & Disclaimer](#important-notice--disclaimer)
--   [Official Channels](#official-channels)
+# While Using Qr Code
+> 1. Get Your Authentication Code **(Auth Code)** from: [HERE](https://Heavstal-Bots.vercel.app)
+> 2.  Download & Upload the complete file to your Node.js server on your computer or other device
+> 3.  Unzip & Enter The "Verselor-V1-main" file, select all and move to "../"
+> 4.  Set the Node version of your hosting environment to version 20x or later (Recommended).
+> 5.  Navigate to your server/hosts console and start the deployment, it will take *approximately* 2 minutes
+> 6.  When prompted, input your Authentication Code (Auth Code)
+> 7.  A Qr Code will appear, Go to WhatsApp → Linked Devices → Link a Device and scan the Qr code
 
----
+# While Using Termux / Ubuntu  / Terminal (With Pair Code)
+* Instructions are coming soon
+* Use you want it to say active 24/7 on termux, don't use `npm start` rather use:
+```bash
+npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
+```
+ 
+# Clone Repo & Installation dependencies
+```bash
+git clone https://github.com/HeavstalTech/Verselor-V1.git
+cd Verselor-V1
 
-## Feature Showcase
+npm start
+``` 
+ 
+ ## Join Our Channels To Stay Updated
+<p align="center">
+<a href="https://youtube.com/@HeavstalTech"><img src="https://img.shields.io/badge/YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://youtube.com/@HeavstalTech" /><br>
+<a href="https://whatsapp.com/channel/0029VbBcg80KwqSR7dr7do1D"><img src="https://img.shields.io/badge/WhatsApp Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&link=https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20" /><br>
+<a href="https://t.me/promisedv1"><img src="https://img.shields.io/badge/Telegram-00FFFF?style=for-the-badge&logo=telegram&logoColor=white" />
+<a href="https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t"><img src="https://img.shields.io/badge/WhatsApp Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+</p>
 
-Verselor V1 integrates a wide array of features, providing a comprehensive toolkit for users and administrators.
 
-### Core AI & GPT Tools
-Leverage multiple cutting-edge AI models for advanced conversational capabilities, text-to-image generation, and more.
--   **Multi-Model Support**: Access various AI models including `GPT-4`, `Meta-AI`, `Copilot`, and `Jeden`.
--   **Text-to-Image Generation**: Create images from textual descriptions using the `gptimage` command.
--   **Intelligent Conversation**: Engage in sophisticated dialogue with the primary `ai` command.
+## Buy Me A Coffee / Donate
 
-### Group & Community Management
-A comprehensive suite of tools for effective group administration and user engagement.
--   **Member Management**: Add, remove, promote, and demote participants (`add`, `kick`, `promote`, `demote`).
--   **Mass Administration**: Perform actions on all members or admins simultaneously (`kickall`, `promoteall`, `demoteall`).
--   **Audience Engagement**: Mention all users with `tagall` or create stealth announcements with `hidetag`.
--   **Access Control**: Manage group settings such as mute/unmute timers (`closetime`, `opentime`) and link control (`antilink`).
--   **Group Utilities**: Retrieve the group link (`gclink`) or reset it (`resetgclink`).
+- [Bank Tranafer](https://heavstal-tech.vercel.app/buy-me-a-coffe)
+- [Paystack](https://heavstal-tech.vercel.app/buy-me-a-coffe)
+-
 
-### Media & Downloader Suite
-Seamlessly download and interact with media from a wide array of popular online platforms.
--   **YouTube**: Search for and download audio (`play`) or video (`video`) content directly from YouTube.
--   **Social Media**: Download videos and content from TikTok (`tiktok`), Instagram (`instagram`), and Facebook (`facebook`).
--   **File Hosting**: Fetch files from Mediafire (`mediafire`) links.
--   **Software**: Search and download APK files (`apk`) for Android applications.
+## Bot Support & Group Chats
 
-### Sticker & Image Creation
-Generate custom stickers and creative text-based images with a powerful set of tools.
--   **Sticker Maker**: Convert images and short videos into WhatsApp stickers with the `sticker` command.
--   **Quote Stickers**: Create stylish quote stickers from text using `qc`.
--   **Sticker Editor**: Modify existing stickers to add new pack names and authors with `take` or `wm`.
--   **GFX & E-Photo**: Generate logos and text effects with dozens of styles, from `glitchtext` and `neonglitch` to `blackpinkstyle` and `luxurygold`.
+- [WhatsApp GC](https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t)
+- [Telegram GC](https://t.me/+OXpT1vvQ5K81MmVk)
+-
 
-### Utility & Information Tools
-A collection of essential utilities for information retrieval, conversions, and technical tasks.
--   **Web Tools**: Capture website screenshots (`ssweb`) and shorten long URLs (`shorturl`).
--   **Information Retrieval**: Get detailed IP information (`ipinfo`), search Wikipedia (`wikipedia`), or look up word definitions (`define`).
--   **QR Code Tools**: Generate (`qrcode`) and read (`readqr`) QR codes.
--   **Media Conversion**: Convert media to different formats, such as `tomp3`, `tomp4`, and enhance image resolution (`hd`).
--   **Audio Filters**: Apply a range of audio effects to voice notes, including `bass`, `nightcore`, `robot`, and `reverse`.
 
-### Entertainment & Games
-Engage users with a variety of interactive games, fun facts, and entertainment commands.
--   **Interactive Games**: Play classic games like `tictactoe` and `rps` (Rock, Paper, Scissors).
--   **Fun Commands**: Get random facts (`fact`), jokes (`joke`), movie quotes (`moviequote`), or pickup lines (`pickupline`).
--   **Personalized Fun**: Check your "stats" with `checkme` or get your fortune told with `horoscope`.
 
----
-
-## System Recommendations
-
-For optimal performance and stability, it is recommended to deploy this bot on a Node.js server environment with the following specifications:
-
-*   **Memory:** A minimum of 2GB RAM.
-*   **Node.js Version:** Version 21 is recommended for best usage.
-
----
-
-## Deployment Instructions
-
-To deploy the Verselor V1 bot, please follow these steps:
-
-1.  Upload the complete project directory to your Node.js server.
-2.  (Optional but Recommended) Set the Node.js version of your environment to version 21.
-3.  Navigate to the server's console or terminal and initiate the deployment script. The process will take approximately three minutes to complete.
-4.  When prompted, input your WhatsApp number to link the bot to your account.
-
----
-
-## Important Notice & Disclaimer
-
-Please be advised that WhatsApp's Terms of Service do not officially support third-party automation services. The use of bots may be flagged by their systems and could potentially lead to a temporary or permanent account ban.
-
-Heavstal Tech is not responsible for any account suspension that may occur. If you choose to proceed with using this service, it is strongly recommended to avoid automated spamming or high-volume actions that may violate WhatsApp's Fair Usage Policy. Use this software responsibly.
-
----
-
-## Official Channels
-
-For support, updates, and community engagement, please refer to our official channels:
-
-*   **WhatsApp Channel:** [https://whatsapp.com/channel/0029VbBcg80KwqSR7dr7do1D](https://whatsapp.com/channel/0029VbBcg80KwqSR7dr7do1D)
-*   **Telegram Channel:** [https://t.me/promisemdv1](https://t.me/promisemdv1)
-*   **YouTube:** [Heavstal Tech Official](https://www.youtube.com/@Heavstal_Tech)
-*   **X (formerly Twitter):** [@Heavstal_Tech](https://twitter.com/Heavstal_Tech)
-
-<div align="center">
-  <p>© A Product Of Heavstal Tech™</p>
-</div>
+<h2 align="center">© A Product Of Heavstal Tech™<br></h2>
