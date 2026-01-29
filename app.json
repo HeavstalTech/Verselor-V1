@@ -1,0 +1,19 @@
+{
+  "name": "Verselor-V1",
+  "description": "A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, & Multi-Tenant WhatsApp bot, built by Heavstal Tech. 2026",
+  "repository": "https://github.com/HeavstalTech/Verselor-V1",
+  "website": "https://heavstal-bots.vercel.app",
+  "logo": "https://files.catbox.moe/a2ullf.jpg",
+  "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "Commonjs"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ]
+}
