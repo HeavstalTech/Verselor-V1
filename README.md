@@ -53,6 +53,10 @@
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)<br>
 **Important Note:** _When deploying to Render, make sure to add your `MONGODB_URI` in the Environment Variables._
 
+# While Using Replit
+[![Run on Replit](https://replit.com/badge/github/HeavstalTech/Verselor-V1)](https://replit.com/new/github/HeavstalTech/Verselor-V1)<br>
+**Note:** _Click "Run", wait for dependencies to install, and follow the instructions in the console._
+
 # While Using Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HeavstalTech/Verselor-V1)<br>
 <br>
