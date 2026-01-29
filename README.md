@@ -15,35 +15,35 @@
  
 ## BOT INFO
  
-**┣ Name:** _Verselor V1_
-**┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, & Multi-Tenant WhatsApp bot, built by Heavstal Tech. 2026_
-**┣ Version:** _1.0.0 (Latest)_
-**┣ Maintained:**  _[ YES ]_
-**┣ Developer:** _HEAVSTAL TECH_
-**┣ Total Commands:** _306 (as of Jan 19, 2026)_
-**┣ Created On:** _January 10th, 2026_
+**┣ Name:** _Verselor V1_<br>
+**┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, & Multi-Tenant WhatsApp bot, built by Heavstal Tech. 2026_<br>
+**┣ Version:** _1.0.0 (Latest)_<br>
+**┣ Maintained:**  _[ YES ]_<br>
+**┣ Developer:** _HEAVSTAL TECH_<br>
+**┣ Total Commands:** _306 (as of Jan 19, 2026)_<br>
+**┣ Created On:** _January 10th, 2026_<br>
 
 
 ## BOT SEETINGS (Defult)
 
-**┣ Prefix:** _[ . ]_
-**┣ Menu Style:** _v1_
-**┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_
-**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_
-**┣ Public Mode:** _On_ 
-**┣ Sleep Mode:** _Off_
-**┣ Group Only:** _Off_
-**┣ Private Only:** _Off_
-**┣ StartUp Message:** _On_
-**┣ Auto React:** _Off_
-**┣ Auto Record:** _Off_
-**┣ Auto Typing:** _Off_
-**┣ Auto Read:** _Off_
-**┣ Auto ReacordType:** _Off_
-**┣ AutoView Status:** _Off_
-**┣ Auto Bio:** _Off_
-**┣ Warn Limit:** _3_
-**┣ Time Zone:** _Africa/Lagos_
+**┣ Prefix:** _[ . ]_<br>
+**┣ Menu Style:** _v1_<br>
+**┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_<br>
+**┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_<br>
+**┣ Public Mode:** _On_<br>
+**┣ Sleep Mode:** _Off_<br>
+**┣ Group Only:** _Off_<br>
+**┣ Private Only:** _Off_<br>
+**┣ StartUp Message:** _On_<br>
+**┣ Auto React:** _Off_<br>
+**┣ Auto Record:** _Off_<br>
+**┣ Auto Typing:** _Off_<br>
+**┣ Auto Read:** _Off_<br>
+**┣ Auto ReacordType:** _Off_<br>
+**┣ AutoView Status:** _Off_<br>
+**┣ Auto Bio:** _Off_<br>
+**┣ Warn Limit:** _3_<br>
+**┣ Time Zone:** _Africa/Lagos_<br>
 
 ### DEPLOYMENT INSTRUCTIONS
 
