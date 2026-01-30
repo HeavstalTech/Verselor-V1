@@ -1,6 +1,6 @@
 <h1 align="center">VERSELOR-V1 BY HEAVSTAL TECH™<br></h1>
 <p align="center">
-<img src="https://files.catbox.moe/q24e65.jpg" width="300" height="300"/>
+<img src="https://files.catbox.moe/g8pxls.png" width="300" height="300"/>
 </p>
 
 <p align="center">
