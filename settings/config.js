@@ -12,7 +12,7 @@ const defaults = {
 prefix: ".",
 timezone:  "Africa/Lagos",
 menu: 'v1',
-thumbnail: "https://files.catbox.moe/a2ullf.jpg",
+thumbnail: "https://files.catbox.moe/g8pxls.png",
 HT_API_KEY: "",
 MONGODB_URI: "",
 publicX: true,
