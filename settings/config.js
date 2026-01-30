@@ -1,4 +1,4 @@
-// settings/config.js
+// Control/Ctrl.js (CJS)
 const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
@@ -13,7 +13,7 @@ prefix: ".",
 timezone:  "Africa/Lagos",
 menu: 'v1',
 thumbnail: "https://files.catbox.moe/g8pxls.png",
-HT_API_KEY: "",
+HT_API_KEY: "ht_live_dc81c8539efe85ec3967a6a2f3be86a3",
 MONGODB_URI: "",
 publicX: true,
 sleep: false,
@@ -103,8 +103,8 @@ wait: `ᴘʀᴏᴄᴇssɪɴɢ...\n\n${footer}`,
        footer: footer,
    },
    error: {
-       fitur: `*𝐄𝐑𝐑𝐎𝐑 𝐃𝐄𝐓𝐄𝐂𝐓𝐄𝐃*\nᴛʜᴇ ғᴇᴀᴛᴜʀᴇ ʜᴀs ᴇʀʀᴏʀ. ᴘʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ғᴏʀ ɪᴍᴍᴇᴅɪᴀᴛᴇ ғɪx\n\n${footer}`,
-       feature: `*𝐄𝐑𝐑𝐎𝐑 𝐃𝐄𝐓𝐄𝐂𝐓𝐄𝐃*\nᴛʜᴇ ғᴇᴀᴛᴜʀᴇ ʜᴀs ᴇʀʀᴏʀ. ᴘʟᴇᴀsᴇ ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ғᴏʀ ɪᴍᴍᴇᴅɪᴀᴛᴇ ғɪx`,
+       fitur: `*𝐀𝐍 𝐔𝐍𝐄𝐗𝐏𝐄𝐂𝐓𝐄𝐃 𝐄𝐑𝐑𝐎𝐑 𝐇𝐀𝐒 𝐎𝐂𝐂𝐔𝐑𝐄𝐃*\nᴡᴇ ᴇɴᴄᴏᴜɴᴛᴇʀᴇᴅ ᴀɴ ᴇʀʀᴏʀ ᴡʜɪʟᴇ ᴛʀʏɪɴɢ ᴛᴏ ʀᴜɴ/ᴇxᴄᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ, ᴜsᴇ ᴛʜᴇ ${prefix}support ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʙᴏᴛ’s ɢᴄ ᴀɴᴅ sᴜʙᴍɪᴛ ᴛʜᴇ ᴇʀʀᴏʀ ʙᴇʟᴏᴡ:\n`,
+       feature: `*𝐀𝐍 𝐔𝐍𝐄𝐗𝐏𝐄𝐂𝐓𝐄𝐃 𝐄𝐑𝐑𝐎𝐑 𝐇𝐀𝐒 𝐎𝐂𝐂𝐔𝐑𝐄𝐃*\nᴡᴇ ᴇɴᴄᴏᴜɴᴛᴇʀᴇᴅ ᴀɴ ᴇʀʀᴏʀ ᴡʜɪʟᴇ ᴛʀʏɪɴɢ ᴛᴏ ʀᴜɴ/ᴇxᴄᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ, ᴜsᴇ ᴛʜᴇ ${prefix}support ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʙᴏᴛ’s ɢᴄ ᴀɴᴅ sᴜʙᴍɪᴛ ᴛʜᴇ ᴇʀʀᴏʀ ʙᴇʟᴏᴡ:\n`,
        body: `*𝐔𝐍𝐄𝐗𝐏𝐄𝐂𝐓𝐄𝐃 𝐄𝐑𝐑𝐎𝐑*\n\nᴀɴ ᴜɴᴇxᴘᴇᴄᴛᴇᴅ ᴇʀʀᴏʀ ʜᴀs ᴏᴄᴄᴜʀʀᴇᴅ, ᴋɪɴᴅʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴡɪᴛʜ ᴛʜᴇ ᴇʀʀᴏʀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ ᴀɴᴅ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴏғ ᴛʜᴇ ᴘʀᴏᴄᴇss\n\n${footer}`,
    },
    only: {
