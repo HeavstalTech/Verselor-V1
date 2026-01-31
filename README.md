@@ -178,7 +178,7 @@ Excessive use, mass messaging, or repeated automated actions **may trigger Whats
 - Or disable them using the provided command to further reduce spam
 - 
 
-## THIS BOT IS STILL UNDER DEVELOPMENT, IF YOU DEPLOY THIS CURRENT SCRIPT, IT "WILL" FAIL
+## Note: This bot is still under development and it's provided files here are incomplete, trying to deploy this current script as it is will cause a deployment/build failure...
 
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
