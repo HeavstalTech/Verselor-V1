@@ -162,4 +162,19 @@ pm2 logs
 - [WhatsApp GC](https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t)
 - [Telegram GC](https://t.me/+OXpT1vvQ5K81MmVk)
 
+
+## ⚠️ Disclaimer
+
+**This bot is designed to help reduce spam**, but it’s still important to note the following:
+
+- This project uses the **Baileys** library, which is **unofficial**.
+- WhatsApp does **not support third-party bots**.
+
+Excessive use, mass messaging, or repeated automated actions **may trigger WhatsApp’s anti-spam system** and could lead to account restrictions or bans.
+
+🔧 **To stay on the safe side:**
+- Consider turning **off startup messages** in `settings/config.js`
+- Or disable them using the provided command to further reduce spam
+- 
+
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
