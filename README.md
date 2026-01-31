@@ -163,8 +163,9 @@ pm2 logs
 - [Telegram GC](https://t.me/+OXpT1vvQ5K81MmVk)
 
 
-## ⚠️ Disclaimer
+## ⚠️ Disclaimers
 
+1.
 **This bot is designed to help reduce spam**, but it’s still important to note the following:
 
 - This project uses the **Baileys** library, which is **unofficial**.
@@ -176,5 +177,8 @@ Excessive use, mass messaging, or repeated automated actions **may trigger Whats
 - Consider turning **off startup messages** in `settings/config.js`
 - Or disable them using the provided command to further reduce spam
 - 
+
+## THIS BOT IS STILL UNDER DEVELOPMENT, IF YOU DEPLOY THIS CURRENT SCRIPT, IT "WILL" FAIL
+
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
