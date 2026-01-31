@@ -124,7 +124,7 @@ npm start
 sudo apt update && sudo apt upgrade -y
 sudo apt install git nodejs ffmpeg imagemagick libwebp -y
 git clone https://github.com/HeavstalTech/Verselor-V1.git
-cd Verselor-V1
+cd Verselor-V1-main
 npm install
 npm start
 ```
