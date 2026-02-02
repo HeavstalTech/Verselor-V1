@@ -8,10 +8,8 @@
   },
   "type": "commonjs",
   "scripts": {
-    "start": "pm2 start index.js --name verselor-v1 --deep-monitoring --attach",
-    "stop": "pm2 stop verselor-v1",
-    "restart": "pm2 restart verselor-v1"
-  },
+    "start": "pm2-runtime start ecosystem.config.js"
+  },    
   "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "Commonjs"],
   "author": "HEAVSTAL TECH",
   "license": "MIT",
