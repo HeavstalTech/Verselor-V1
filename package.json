@@ -8,12 +8,9 @@
   },
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "pm2:start": "pm2 start index.js --name verselor-v1",
-    "pm2:stop": "pm2 stop verselor-v1",
-    "pm2:restart": "pm2 restart verselor-v1",
-    "pm2:logs": "pm2 logs verselor-v1"
+    "start": "pm2 start index.js --name verselor-v1 --deep-monitoring --attach",
+    "stop": "pm2 stop verselor-v1",
+    "restart": "pm2 restart verselor-v1"
   },
   "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "Commonjs"],
   "author": "HEAVSTAL TECH",
