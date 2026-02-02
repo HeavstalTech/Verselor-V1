@@ -131,17 +131,6 @@ npm start
 
 ---
 
-### 🟢 KEEP ACTIVE 24/7 (PM2)
-To keep the bot running in the background (Termux/VPS), do not use `npm start`. Use **PM2** instead:
-
-```bash
-npm install -g pm2
-pm2 start index.js --name verselor
-pm2 save
-pm2 logs
-```
-
----
 
 ## Join Our Channels To Stay Updated
 <p align="center">
