@@ -177,7 +177,7 @@ This project is licensed under the **MIT License**.
 
 ## Copyright Notice:
 
-You may obtain a copy of this file by any means, most part of this file is open source, but trying to de-obfuscated, re-brand or do any unauthorized activity with this file is strictly prohibited and may lead to legal issues.
+You may obtain a copy of this file by any means, most part of this file is open source any you may copy this parts for personal use but you must give credit to **Heavstal Tech** but trying to de-obfuscated the obfuscated part of this file, re-brand or do any unauthorized activity with this file is strictly prohibited and may lead to legal issues.
 
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
