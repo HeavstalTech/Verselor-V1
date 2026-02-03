@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: verselor-v1
+    repo: https://github.com/HeavstalTech/Verselor-V1.git
+    branch: main
+    dockerfilePath: Dockerfile
+    runtime: node
+    plan: free
+
+    buildCommand: npm install
+    startCommand: npm start
+
+    autoDeploy: true    
