@@ -3,11 +3,10 @@ services:
     name: verselor-v1
     repo: https://github.com/HeavstalTech/Verselor-V1.git
     branch: main
+    runtime: docker
     dockerfilePath: Dockerfile
-    runtime: node
     plan: free
-
-    buildCommand: npm install
-    startCommand: npm start
-
-    autoDeploy: true    
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 3000
