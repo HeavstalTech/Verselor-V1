@@ -165,11 +165,15 @@ Excessive use, mass messaging, or repeated automated actions **may trigger Whats
 🔧 **To stay on the safe side:**
 - Consider turning **off startup messages** in `settings/config.js`
 - Or disable them using the provided command to further reduce spam
-- 
 
 ## Note: 
 
 **This bot is still under development and it's provided files here are incomplete, trying to deploy this current script as it is will cause a deployment/build failure...**
+
+
+## License
+
+This project is licensed under the **MIT License**.
 
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
