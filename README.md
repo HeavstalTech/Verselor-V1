@@ -175,5 +175,9 @@ Excessive use, mass messaging, or repeated automated actions **may trigger Whats
 
 This project is licensed under the **MIT License**.
 
+## Copyright Notice:
+
+You may obtain a copy of this file by any means, most part of this file is open source, but trying to de-obfuscated, re-brand or do any unauthorized activity with this file is strictly prohibited and may lead to legal issues.
+
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
