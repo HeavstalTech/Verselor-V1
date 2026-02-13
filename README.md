@@ -162,9 +162,8 @@ npm start
 
 Excessive use, mass messaging, or repeated automated actions **may trigger WhatsApp’s anti-spam system** and could lead to account restrictions or bans.
 
-🔧 **To stay on the safe side:**
-- Consider turning **off startup messages** in `settings/config.js`
-- Or disable them using the provided command to further reduce spam
+🔧 **To reduce the risk of this slightly:**
+- Consider turning **off startup messages** in with the command after deployment....
 
 ## Note: 
 
