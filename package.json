@@ -8,8 +8,7 @@
   },
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
-    "postinstall": "npm rebuild > /dev/null 2>&1"
+    "start": "node index.js"
   },
   "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "Commonjs"],
   "author": "HEAVSTAL TECH",
@@ -18,18 +17,14 @@
     "@hapi/boom": "^10.0.0",
     "@heavstaltech/baileys": "^3.2.5",
     "@heavstaltech/api": "^1.3.7",
-    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@distube/ytdl-core": "^4.16.12",
-    "awesome-phonenumber": "^2.64.0",
     "chalk": "^4.1.2",
     "qrcode-terminal": "^0.12.0",
-    "fluent-ffmpeg": "^2.1.2",
     "cheerio": "^1.0.0-rc.10",
     "google-it": "^1.6.4",
     "node-cache": "^5.1.2",
     "file-type": "^16.5.3",
     "human-readable": "^0.2.1",
-    "moment-timezone": "^0.5.34",
     "node-webpmux": "^3.1.1",
     "pino": "^8.14.1",
     "steno": "^4.0.2",
