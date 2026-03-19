@@ -1,5 +1,6 @@
 <h1 align="center">VERSELOR-V1 BY HEAVSTAL TECH™<br></h1>
 <p align="center">
+ <a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
 <img src="https://files.catbox.moe/g8pxls.png" width="300" height="300"/>
 </p>
 
@@ -20,7 +21,7 @@
 **┣ Version:** _1.0.0 (Latest)_<br>
 **┣ Maintained:**  _[ YES ]_<br>
 **┣ Developer:** _HEAVSTAL TECH_<br>
-**┣ Total Commands:** _560 (as of Tue 10, March, 2026)_<br>
+**┣ Total Commands:** _570 (as of Thur 19, March, 2026)_<br>
 **┣ Created On:** _January 10th, 2026_<br>
 
 
@@ -68,7 +69,7 @@
 ---
 
 ### 📂 WEB PANEL DEPLOYMENT (Upload Method)
-*For users using panels like Pterodactyl, KataBump, or cPanel.*
+*For users using panels like Pterodactyl, Discord Hosting Sites, or cPanel.*
 
 # Method 1: Using Pair Code
 > 1. Download the complete code as a ZIP file.
@@ -180,3 +181,4 @@ You may obtain a copy of this file by any means, most part of this file is open 
 
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
+<a><img src='https://i.imgur.com/LyHic3i.gif'/></a><a><img src='https://i.imgur.com/LyHic3i.gif'/></a>

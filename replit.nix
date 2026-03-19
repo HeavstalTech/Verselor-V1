@@ -1,10 +1,9 @@
 { pkgs }: {
   deps = [
-    pkgs.nodejs-20_x
+    pkgs.nodejs_20
     pkgs.ffmpeg
     pkgs.imagemagick
     pkgs.libwebp
     pkgs.git
-    pkgs.pm2
   ];
 }
