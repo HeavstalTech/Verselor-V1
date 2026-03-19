@@ -4,7 +4,7 @@ console.log('Starting Verselor-V1 Process Manager...');
 
 // Verselor-V1 requires node 20x but not node 24x ro run effectively 
 const major = parseInt(process.versions.node.split('.')[0], 10);
-if (major < 20 || major >= 24) {
+if (major < 20) {
   console.error(
     `\n❌ [SYSTEM ERROR] Unsupported Node.js Version Detected.\n` +
     `   You are using Node.js ${process.versions.node}.\n` +
