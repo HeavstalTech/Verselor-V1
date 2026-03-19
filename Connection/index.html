@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verselor V1 Control Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00ff88;
+            --bg: #0a0a0f;
+            --glass: rgba(20, 20, 30, 0.6);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { 
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat fixed; 
+            color: #fff; display: flex; justify-content: center; align-items: center; min-height: 100vh;
+        }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: -1; }
+        
+        .container { 
+            background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border); border-radius: 20px; width: 90%; max-width: 900px;
+            display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+            height: 85vh;
+        }
+        
+        .header { background: rgba(0,0,0,0.4); padding: 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+        .header h1 { font-size: 24px; font-weight: 800; letter-spacing: 2px; }
+        .header img { height: 40px; border-radius: 50%; border: 2px solid var(--primary); }
+        .status-badge { padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: rgba(255,255,255,0.1); }
+        .status-badge.online { background: rgba(0, 255, 136, 0.2); color: var(--primary); border: 1px solid var(--primary); }
+
+        .tabs { display: flex; background: rgba(0,0,0,0.3); }
+        .tab { flex: 1; padding: 15px; text-align: center; cursor: pointer; font-weight: 600; transition: 0.3s; border-bottom: 3px solid transparent; }
+        .tab:hover { background: rgba(255,255,255,0.05); }
+        .tab.active { border-bottom-color: var(--primary); color: var(--primary); background: rgba(0, 255, 136, 0.05); }
+
+        .content { flex: 1; padding: 30px; overflow-y: auto; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Pairing UI */
+        .pair-box { text-align: center; max-width: 400px; margin: 40px auto; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        .input-group label { display: block; margin-bottom: 8px; font-size: 13px; color: #aaa; text-transform: uppercase; }
+        input[type="text"], textarea { 
+            width: 100%; padding: 14px; background: rgba(0,0,0,0.5); border: 1px solid var(--border); 
+            border-radius: 8px; color: #fff; font-size: 15px; outline: none; transition: 0.3s;
+        }
+        input[type="text"]:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 15px rgba(0,255,136,0.2); }
+        
+        button { 
+            width: 100%; padding: 15px; background: var(--primary); color: #000; font-weight: 800; 
+            border: none; border-radius: 8px; cursor: pointer; transition: 0.3s; font-size: 16px;
+        }
+        button:hover { box-shadow: 0 0 20px var(--primary); transform: translateY(-2px); }
+        
+        #code-display { font-size: 45px; font-weight: 800; margin: 30px 0; letter-spacing: 8px; color: #fff; text-shadow: 0 0 20px var(--primary); }
+
+        /* Settings Grid */
+        .settings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .setting-card { background: rgba(0,0,0,0.4); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
+        
+        /* Toggle Switch */
+        .toggle-wrapper { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #333; transition: .4s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--primary); box-shadow: 0 0 10px var(--primary); }
+        input:checked + .slider:before { transform: translateX(24px); }
+
+        .toast { position: fixed; bottom: 20px; right: 20px; background: var(--primary); color: #000; padding: 15px 25px; border-radius: 8px; font-weight: 600; opacity: 0; transition: 0.3s; z-index: 1000; }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://files.catbox.moe/g8pxls.png" alt="Logo">
+                <h1>VERSELOR V1</h1>
+            </div>
+            <div id="status-badge" class="status-badge"><i class="fas fa-circle-notch fa-spin"></i> Connecting...</div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('dashboard')"><i class="fas fa-home"></i> Dashboard</div>
+            <div class="tab" onclick="switchTab('config')"><i class="fas fa-cog"></i> Settings</div>
+            <div class="tab" onclick="switchTab('messages')"><i class="fas fa-comment-dots"></i> Messages</div>
+        </div>
+
+        <div class="content">
+            <!-- DASHBOARD TAB -->
+            <div id="dashboard" class="tab-content active">
+                <div class="pair-box" id="pair-container">
+                    <h2 style="margin-bottom: 10px;"><i class="fas fa-link"></i> Link Device</h2>
+                    <p style="color: #aaa; margin-bottom: 25px; font-size: 14px;">Select your preferred connection method below. You can change the default mode in the settings tab.</p>
+                    
+                    <div id="phone-pairing" style="display: none;">
+                        <div class="input-group">
+                            <label>WhatsApp Number</label>
+                            <input type="text" id="phone" placeholder="e.g. 2348123456789">
+                        </div>
+                        <button onclick="requestPairing()"><i class="fas fa-key"></i> Get Pairing Code</button>
+                    </div>
+
+                    <div id="qr-pairing" style="display: none; text-align: center;">
+                        <p style="color: var(--primary); margin-bottom: 20px;">Scan the QR code below using your WhatsApp.</p>
+                        <img id="qr-image" src="" alt="Waiting for QR..." style="width: 250px; height: 250px; border-radius: 12px; border: 2px solid var(--border); display: none;">
+                        <p id="qr-loading"><i class="fas fa-spinner fa-spin"></i> Generating QR...</p>
+                    </div>
+
+                    <div id="code-display"></div>
+                    <p id="status-msg" style="margin-top: 15px; color: #aaa;"></p>
+                </div>
+                <div id="active-dashboard" style="display: none; text-align: center; margin-top: 50px;">
+                    <i class="fas fa-check-circle" style="font-size: 60px; color: var(--primary); margin-bottom: 20px; text-shadow: 0 0 20px var(--primary);"></i>
+                    <h2>System is Online & Running</h2>
+                    <p style="color: #aaa; margin-top: 10px;">Verselor V1 is connected. You can monitor settings from the tabs above.</p>
+                </div>
+            </div>
+
+            <!-- SETTINGS TAB -->
+            <div id="config" class="tab-content">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center;">
+                    <h2><i class="fas fa-sliders-h"></i> Core Configuration</h2>
+                    <button onclick="saveConfig()" style="width: auto; padding: 10px 20px; font-size: 14px;"><i class="fas fa-save"></i> Save & Restart</button>
+                </div>
+                
+                <!-- Dynamic Form Injected Here -->
+                <div class="settings-grid" id="settings-grid"></div>
+            </div>
+
+            <!-- MESSAGES TAB -->
+            <div id="messages" class="tab-content">
+                <div style="background: rgba(255, 170, 0, 0.1); border: 1px solid orange; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                    <h4 style="color: orange;"><i class="fas fa-exclamation-triangle"></i> Recommendation</h4>
+                    <p style="font-size: 13px; color: #ccc; margin-top: 5px;">It is highly recommended to leave these as default unless you want to completely rebrand the bot's tone.</p>
+                </div>
+                <div class="settings-grid" id="messages-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Configuration Saved! Restarting...</div>
+
+    <script>
+        let currentConfig = {};
+
+        // 1. Tab Switcher
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 2. Fetch Config & Build UI
+        async function fetchConfig() {
+            try {
+                const res = await fetch('/api/config');
+                currentConfig = await res.json();
+                buildConfigUI();
+                
+                // Set Pairing Mode UI
+                if(currentConfig.usePairingCode) {
+                    document.getElementById('phone-pairing').style.display = 'block';
+                    document.getElementById('qr-pairing').style.display = 'none';
+                } else {
+                    document.getElementById('phone-pairing').style.display = 'none';
+                    document.getElementById('qr-pairing').style.display = 'block';
+                }
+            } catch (e) {
+                console.error("Failed to fetch config");
+            }
+        }
+
+        const schema =[
+            { key: 'usePairingCode', type: 'bool', label: 'Use Pair Code (Off = QR)' },
+            { key: 'publicX', type: 'bool', label: 'Public Mode' },
+            { key: 'startup', type: 'bool', label: 'Startup Messages' },
+            { key: 'autoRead', type: 'bool', label: 'Auto Read Messages' },
+            { key: 'autoTyping', type: 'bool', label: 'Auto Typing' },
+            { key: 'autoRecord', type: 'bool', label: 'Auto Recording' },
+            { key: 'autoViewStatus', type: 'bool', label: 'Auto View Status' },
+            { key: 'onlygroup', type: 'bool', label: 'Group Chat Only' },
+            { key: 'onlyprivate', type: 'bool', label: 'Private Chat Only' },
+            { key: 'sleep', type: 'bool', label: 'Sleep Mode' },
+            { key: 'prefix', type: 'text', label: 'Bot Prefix (e.g. . / !)' },
+            { key: 'timezone', type: 'text', label: 'Timezone (e.g. Africa/Lagos)' },
+            { key: 'HT_API_KEY', type: 'text', label: 'Heavstal API Key' },
+            { key: 'MONGODB_URI', type: 'text', label: 'MongoDB Connection URI' },
+            { key: 'AiName', type: 'text', label: 'AI Name' },
+            { key: 'ai_persona', type: 'text', label: 'AI Base Persona' },
+        ];
+
+        function buildConfigUI() {
+            const grid = document.getElementById('settings-grid');
+            const msgGrid = document.getElementById('messages-grid');
+            grid.innerHTML = '';
+            msgGrid.innerHTML = '';
+
+            // Build Settings
+            schema.forEach(item => {
+                const val = currentConfig[item.key] !== undefined ? currentConfig[item.key] : '';
+                let html = '';
+                
+                if (item.type === 'bool') {
+                    html = `
+                    <div class="setting-card">
+                        <div class="toggle-wrapper">
+                            <span style="font-weight:600; font-size: 14px;">${item.label}</span>
+                            <label class="switch">
+                                <input type="checkbox" id="cfg_${item.key}" ${val ? 'checked' : ''}>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>`;
+                } else {
+                    html = `
+                    <div class="setting-card">
+                        <div class="input-group" style="margin:0;">
+                            <label>${item.label}</label>
+                            <input type="text" id="cfg_${item.key}" value="${val}">
+                        </div>
+                    </div>`;
+                }
+                grid.innerHTML += html;
+            });
+
+            // Build Messages (if exists in DB, or provide inputs to create it)
+            if(!currentConfig.mess) currentConfig.mess = {};
+            const msgKeys =['wait', 'success', 'owner', 'admin', 'group', 'nsfw'];
+            
+            msgKeys.forEach(k => {
+                const val = currentConfig.mess[k] || '';
+                msgGrid.innerHTML += `
+                <div class="setting-card" style="grid-column: 1 / -1;">
+                    <div class="input-group" style="margin:0;">
+                        <label>mess.${k}</label>
+                        <textarea id="msg_${k}" rows="2">${val}</textarea>
+                    </div>
+                </div>`;
+            });
+        }
+
+        // 3. Save Config
+        async function saveConfig() {
+            const newConfig = {};
+            
+            // Grab settings
+            schema.forEach(item => {
+                const el = document.getElementById('cfg_' + item.key);
+                if(item.type === 'bool') newConfig[item.key] = el.checked;
+                else newConfig[item.key] = el.value;
+            });
+
+            // Grab messages
+            newConfig.mess = {};
+            const msgKeys = ['wait', 'success', 'owner', 'admin', 'group', 'nsfw'];
+            msgKeys.forEach(k => {
+                newConfig.mess[k] = document.getElementById('msg_' + k).value;
+            });
+
+            try {
+                await fetch('/api/config', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(newConfig)
+                });
+                
+                const toast = document.getElementById('toast');
+                toast.style.opacity = 1;
+                setTimeout(() => toast.style.opacity = 0, 3000);
+            } catch (e) {
+                alert("Failed to save configuration.");
+            }
+        }
+
+        // 4. Request Phone Pairing
+        async function requestPairing() {
+            const phone = document.getElementById('phone').value;
+            if (!phone) return alert('Enter a valid number!');
+            
+            document.getElementById('phone-pairing').style.display = 'none';
+            document.getElementById('status-msg').innerText = "Generating 8-digit sync code...";
+
+            try {
+                const res = await fetch('/api/pair', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phone })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    document.getElementById('code-display').innerText = data.code;
+                    document.getElementById('status-msg').innerText = "Go to WhatsApp > Linked Devices > Link with phone number";
+                } else {
+                    alert("Error: " + data.message);
+                    document.getElementById('phone-pairing').style.display = 'block';
+                }
+            } catch (e) {
+                alert("Server connection failed.");
+                document.getElementById('phone-pairing').style.display = 'block';
+            }
+        }
+
+        // 5. Polling Bot Status
+        setInterval(async () => {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+                
+                const badge = document.getElementById('status-badge');
+                
+                if (data.status === 'running') {
+                    badge.className = 'status-badge online';
+                    badge.innerHTML = '<i class="fas fa-check-circle"></i> Online';
+                    document.getElementById('pair-container').style.display = 'none';
+                    document.getElementById('active-dashboard').style.display = 'block';
+                } else {
+                    badge.className = 'status-badge';
+                    badge.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
+                    document.getElementById('pair-container').style.display = 'block';
+                    document.getElementById('active-dashboard').style.display = 'none';
+                }
+
+                // Handle QR Code Display
+                if (data.status === 'waiting_qr' && data.qr) {
+                    const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(data.qr)}&color=00ff88&bgcolor=111`;
+                    document.getElementById('qr-image').src = qrUrl;
+                    document.getElementById('qr-image').style.display = 'inline-block';
+                    document.getElementById('qr-loading').style.display = 'none';
+                    document.getElementById('status-msg').innerText = "Scan this QR Code with WhatsApp";
+                }
+
+            } catch(e) {}
+        }, 3000);
+
+        // Initial Load
+        fetchConfig();
+    </script>
+</body>
+</html>
