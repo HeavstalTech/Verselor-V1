@@ -24,7 +24,6 @@
 **┣ Total Commands:** _570 (as of Thur 19, March, 2026)_<br>
 **┣ Created On:** _January 10th, 2026_<br>
 
-
 ## BOT SETTINGS (Default)
 
 **┣ Prefix:** _[ . ]_<br>
@@ -45,6 +44,10 @@
 **┣ Auto Bio:** _Off_<br>
 **┣ Warn Limit:** _3_<br>
 **┣ Time Zone:** _Africa/Lagos_<br>
+
+## NOTABLE COMMANDS
+
+1. **➭ verselor:** one of VERSELOR V1's most notable command is the *verselor/bot-ai/boatai/bai* command, known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.
 
 ---
 
@@ -168,7 +171,7 @@ Excessive use, mass messaging, or repeated automated actions **may trigger Whats
 
 ## Note: 
 
-**This bot is still under development and it's provided files here are incomplete, trying to deploy this current script as it is will cause a deployment/build failure...**
+**This bot is still under development, trying to deploy this current script as it is will cause a deployment/build failure...**
 
 
 ## License
