@@ -52,25 +52,35 @@
 
 ### ☁️ CLOUD DEPLOYMENT
 
-# While Using Render
+# While Using Render (verified)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)<br>
-**Important Note:** _When deploying to Render, make sure to add your `MONGODB_URI` in the Environment Variables._
+**Important Note:** After clicking Deploy to Render, copy and go to the given link, wait abt 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your [AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
-# While Using Replit
+# While Using Replit (verified)
 [![Run on Replit](https://replit.com/badge/github/HeavstalTech/Verselor-V1)](https://replit.com/new/github/HeavstalTech/Verselor-V1)<br>
-**Note:** _Click "Run", wait for dependencies to install, and follow the instructions in the console._
+**Important Note:** After clicking Run on Replit, copy and go to the given link, wait abt 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your [AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
-# While Using Heroku
+# While Using Heroku (not tested yet)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HeavstalTech/Verselor-V1)<br>
 <br>
 **BUILDPACKS:**
 1. `heroku/nodejs`
 2. `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
 3. `https://github.com/clhuang/heroku-buildpack-webp-binaries.git`
+**Important Note:** After clicking Deploy on Heroku, copy and go to the given link, wait abt 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your [AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
+
+# While Using Koyeb (not tested yet)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/services/deploy?type=git&repository=github.com/HeavstalTech/Verselor-V1&branch=main&name=Verselor-V1&builder=dockerfile)<br>
+**Note:** _Koyeb will automatically detect the Dockerfile and build the bot. Once deployed, open your Koyeb App URL to access the Control Panel and pair your number._
+
+# While Using TalkDrove (not tested yet).
+<a href="https://host.talkdrove.com">
+<img src="https://img.shields.io/badge/Deploy-TalkDrove-blueviolet"></a><br>
+**Note:** _Create an account, link your GitHub, select your forked Verselor-V1 repository, and deploy using the Node.js/Docker environment._
 ---
 
-### 📂 WEB PANEL DEPLOYMENT (Upload Method)
+### 📂 WEB PANEL DEPLOYMENT (Upload Method - verified)
 *For users using panels like Pterodactyl, Discord Hosting Sites, or cPanel.*
 
 # Method 1: Using Pair Code
@@ -83,15 +93,24 @@
 > 7. When prompted in the console, **input your WhatsApp number** (Country Code + Number).
 > 8. A Code will appear. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
-# Method 2: Using QR Code
+# Method 2: Using QR Code (verified)
 > 1. Open `settings/config.js` and set `usePairingCode` to `false`.
 > 2. Follow steps 1-5 from above (Upload, Unzip, Start).
 > 3. A QR Code will appear in the console.
 > 4. Go to WhatsApp → Linked Devices → Link a Device and scan the QR code.
 
+**Important:** (verified)
+if you're deploying on [Katabump](https://dashboard.katabump.com/auth/login#7d6b58), you must:
+> 1. [Fork This Repo](https://github.com/HeavstalTech/Verselor-V1/fork)
+> 2. Navigate To [Settings Folder](https://github.com/HeavstalTech/Verselor-V1/tree/main/settings) and enter the [config.js file](https://github.com/HeavstalTech/Verselor-V1/blob/main/settings/config.js)
+> 3. Click the three dots (...) --> [Edit In place](https://github.com/HeavstalTech/Verselor-V1/edit/main/settings/config.js)
+> 4. Add your [WhatsApp](https://whatsapp.com) Number to the place that says *_phoneNumber*, add it in between the *""* in country code format 
+> 5. Commit - Commit Change
+> 6. Follow All The Steps from *METHOD 1*
+
 ---
 
-### 💻 COMMAND LINE INSTALLATION (Termux/VPS)
+### 💻 COMMAND LINE INSTALLATION (Termux/VPS - not tested yet)
 
 ## `Requirements`
 * [Node.js](https://nodejs.org/en/) (Version 20+)
@@ -122,7 +141,7 @@ npm start
 ```
 *Follow the prompts in the terminal to enter your number and get the Pairing Code.*
 
-## `For VPS / Ubuntu / Linux`
+## `For VPS / Ubuntu / Linux` (no tested yet)
 ```bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install git nodejs ffmpeg imagemagick libwebp -y
@@ -135,11 +154,11 @@ npm start
 ---
 
 
-## Join Our Channels To Stay Updated
+## Join Our Channels To Stay Updated (recommended)
 <p align="center">
 <a href="https://youtube.com/@Heavstal_Tech"><img src="https://img.shields.io/badge/YouTube-ff0000?style=for-the-badge&logo=youtube&logoColor=ff000000&link=https://youtube.com/@Heavstal_Tech" /></a><br>
 <a href="https://whatsapp.com/channel/0029VbBcg80KwqSR7dr7do1D"><img src="https://img.shields.io/badge/WhatsApp Channel-25D366?style=for-the-badge&logo=whatsapp&logoColor=white&link=https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20" /></a><br>
-<a href="https://t.me/promisemdv1"><img src="https://img.shields.io/badge/Telegram-00FFFF?style=for-the-badge&logo=telegram&logoColor=white" /></a>
+<a href="https://t.me/promisemdv)1"><img src="https://img.shields.io/badge/Telegram-00FFFF?style=for-the-badge&logo=telegram&logoColor=white" /></a>
 <a href="https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t"><img src="https://img.shields.io/badge/WhatsApp Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" /></a>
 </p>
 
@@ -149,22 +168,16 @@ npm start
 - [Bank Transfer](https://heavstal-tech.vercel.app/buy-me-a-coffee)
 - [Paystack](https://heavstal-tech.vercel.app/buy-me-a-coffee)
 
-## Bot Support & Group Chats
+## Join Our Bot Support & Group Chats (recommended)
 
 - [WhatsApp GC](https://chat.whatsapp.com/F0gAKf6g7a18sY5WqtWxVt?mode=ems_copy_t)
 - [Telegram GC](https://t.me/+OXpT1vvQ5K81MmVk)
 
 
-## ⚠️ Disclaimers
+## ⚠️ Disclaimers (caution)
 
-1.
-**This bot is designed to help reduce spam**, but it’s still important to note the following:
-
-- This project uses the **Baileys** library, which is **unofficial**.
-- WhatsApp does **not support third-party bots**.
-
-Excessive use, mass messaging, or repeated automated actions **may trigger WhatsApp’s anti-spam system** and could lead to account restrictions or bans.
-
+## *Verselor-V1 is not made by WhatsApp Inc. Misusing the bot might ban your WhatsApp account!* - *In Such Scenerios, Heavstal Tech is not responsible for the banning of your account.* - *Use Verselor-V1 at your own risk by keeping this warning in mind.*
+    
 🔧 **To reduce the risk of this slightly:**
 - Consider turning **off startup messages** in with the command after deployment....
 
