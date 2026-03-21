@@ -1,8 +1,10 @@
-// --- START OF FILE index.js ---
-// This is a copyright code, if you take it, please give credit to HEAVSTAL TECH, i spent a lot of time and dedication om this project 
-console.log('Starting Verselor-V1 Process Manager...');
+// index.js
+// © HEAVSTAL TECH
+const { fork } = require('child_process');
+const path = require('path');
+const http = require('http');
+const fs = require('fs');
 
-// Verselor-V1 requires node 20x but not node 24x ro run effectively 
 const major = parseInt(process.versions.node.split('.')[0], 10);
 if (major < 20) {
   console.error(
@@ -14,15 +16,12 @@ if (major < 20) {
   process.exit(0);
 }
 
-const { fork } = require('child_process');
-const path = require('path');
-const http = require('http');
-const fs = require('fs');
-
 let botState = 'starting'; 
 let child = null;
 let pendingCodeResponse = null;
 let currentQR = null;
+
+const backupFile = path.join(__dirname, 'settings', 'backup_config.json');
 
 const isCloud = 
     process.env.PORT ||  
@@ -37,6 +36,14 @@ const isCloud =
 
 if (isCloud) {
     const port = process.env.PORT || 3000;
+
+   let sseClients = [];
+
+   function broadcastToUI(event, data) {
+    sseClients.forEach(client => {
+        client.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+    });
+ }
     
     http.createServer((req, res) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
@@ -47,6 +54,28 @@ if (isCloud) {
             res.writeHead(200);
             return res.end();
         }
+
+        if (req.method === 'GET' && req.url === '/style.css') {
+            const cssPath = path.join(__dirname, 'Connection', 'style.css');
+            if (fs.existsSync(cssPath)) {
+                res.writeHead(200, { 'Content-Type': 'text/css' });
+                fs.createReadStream(cssPath).pipe(res);
+                return;
+            }
+        }
+
+      if (req.method === 'GET' && req.url === '/api/logs') {
+            res.writeHead(200, {
+                'Content-Type': 'text/event-stream',
+                'Cache-Control': 'no-cache',
+                'Connection': 'keep-alive'
+            });
+            sseClients.push(res);
+            req.on('close', () => {
+                sseClients = sseClients.filter(c => c !== res);
+            });
+            return;
+      }
 
         if (req.method === 'GET' && req.url === '/') {
             const htmlPath = path.join(__dirname, 'Connection', 'index.html');
@@ -69,15 +98,23 @@ if (isCloud) {
             req.on('end', () => {
                 try {
                     const data = JSON.parse(body);
-                    if (botState !== 'waiting') {
-                        res.writeHead(400);
-                        return res.end(JSON.stringify({ success: false, message: "Bot is already paired or starting up." }));
+                    
+                    let backup = { usePairingCode: true };
+                    if (fs.existsSync(backupFile)) {
+                        try { backup = JSON.parse(fs.readFileSync(backupFile, 'utf8')); } catch(e) {}
                     }
+                    backup.phoneNumber = data.phone;
+                    backup.AuthCode = data.authCode;
+                    fs.writeFileSync(backupFile, JSON.stringify(backup, null, 2));
 
                     botState = 'processing';
                     pendingCodeResponse = res; 
                     
-                    child.send({ type: 'submit_phone', phone: data.phone });
+                    if (!child) {
+                        startBot();
+                    } else {
+                        child.send({ type: 'submit_phone', phone: data.phone });
+                    }
 
                 } catch (e) {
                     res.writeHead(500);
@@ -145,13 +182,6 @@ if (isCloud) {
                     res.writeHead(200, { 'Content-Type': 'application/json' });
                     res.end(JSON.stringify({ success: true }));
 
-                    if (child) {
-                        console.log("Config updated via Web. Restarting bot...");
-                        child.kill();
-                        botState = 'starting';
-                        currentQR = null;
-                        setTimeout(startBot, 2000);
-                    }
                 } catch(e) {
                     res.writeHead(500);
                     res.end(JSON.stringify({ success: false, message: 'Failed to save config.' }));
@@ -171,14 +201,49 @@ const CHILD_PATH = path.join(__dirname, 'Connection', 'start.js');
 
 function startBot() {
     console.log('[SYSTEM] Forking child process...');
-    child = fork(CHILD_PATH,[], {
+    child = fork(CHILD_PATH, [], {
         cwd: __dirname,
-        stdio: ['inherit', 'inherit', 'inherit', 'ipc'], 
+        stdio:['inherit', 'inherit', 'inherit', 'ipc'], 
         env: process.env
     });
 
     child.on('message', (msg) => {
-        if (msg === 'reset') {
+      if (msg.type === 'log') {
+            broadcastToUI('log', msg);
+      }
+        else if (req.method === 'GET' && req.url === '/api/rentbot/list') {
+            const pairingDir = path.join(__dirname, 'Connection', 'pairing');
+            let users =[];
+            if (fs.existsSync(pairingDir)) {
+                users = fs.readdirSync(pairingDir, { withFileTypes: true })
+                    .filter(d => d.isDirectory() && d.name.endsWith('@s.whatsapp.net'))
+                    .map(d => d.name.replace('@s.whatsapp.net', ''));
+            }
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ users }));
+        }
+        else if (req.method === 'POST' && req.url === '/api/rentbot/pair') {
+            let body = '';
+            req.on('data', chunk => body += chunk.toString());
+            req.on('end', () => {
+                try {
+                    const data = JSON.parse(body);
+                    if (child) child.send({ type: 'rentbot_pair', phone: data.phone });
+                    res.writeHead(200, { 'Content-Type': 'application/json' });
+                    res.end(JSON.stringify({ success: true }));
+                } catch (e) {
+                    res.writeHead(500); res.end(JSON.stringify({ success: false }));
+                }
+            });
+        }
+        else if (req.method === 'DELETE' && req.url.startsWith('/api/rentbot/')) {
+            const phone = req.url.split('/').pop();
+            const dir = path.join(__dirname, 'Connection', 'pairing', phone + '@s.whatsapp.net');
+            if (fs.existsSync(dir)) fs.rmSync(dir, { recursive: true, force: true });
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ success: true }));
+        }
+       else if (msg === 'reset') {
             console.log('[CHILD] Bot requested restart...');
             child.kill(); 
         } 
@@ -189,30 +254,36 @@ function startBot() {
         else if (msg.type === 'qr') {
             botState = 'waiting_qr';
             currentQR = msg.qr;
+            broadcastToUI('qr', { qr: msg.qr });
         }
         else if (msg.type === 'bot_running') {
             botState = 'running';
             currentQR = null;
+            broadcastToUI('status_update', { status: 'running' });
         } 
         else if (msg.type === 'pairing_code') {
             botState = 'paired_wait';
+            broadcastToUI('pairing_code', { code: msg.code });
             if (pendingCodeResponse) {
-                pendingCodeResponse.writeHead(200, { 'Content-Type': 'application/json' });
+              pendingCodeResponse.writeHead(200, { 'Content-Type': 'application/json' });
                 pendingCodeResponse.end(JSON.stringify({ success: true, code: msg.code }));
                 pendingCodeResponse = null;
             }
         } 
         else if (msg.type === 'invalid_phone' || msg.type === 'pairing_error') {
-            botState = 'waiting';
+            botState = 'waiting_setup';
             if (pendingCodeResponse) {
                 pendingCodeResponse.writeHead(400, { 'Content-Type': 'application/json' });
                 pendingCodeResponse.end(JSON.stringify({ success: false, message: msg.message }));
                 pendingCodeResponse = null;
             }
+          else if (msg.type === 'fatal_error') {
+            botState = 'waiting_setup';
+            broadcastToUI('fatal_error', { message: msg.message });
+          }
         }
     });
 
-    // --- CHILD PROCESS ERROR & EXIT TRACKING ---
     child.on('error', (err) => {
         console.error('[CHILD-ERROR] Failed to spawn or communicate with child:', err);
     });
@@ -231,15 +302,29 @@ function startBot() {
     });
 }
 
-// --- PARENT PROCESS LIFECYCLE & SIGNAL TRACKING ---
+let hasSetup = false;
+if (fs.existsSync(backupFile)) {
+    try {
+        const backup = JSON.parse(fs.readFileSync(backupFile, 'utf8'));
+        if (backup.phoneNumber && backup.AuthCode) hasSetup = true;
+    } catch (e) {}
+}
+
+if (!isCloud || hasSetup) {
+    startBot();
+} else {
+    botState = 'waiting_setup';
+    console.log('[SYSTEM] Cloud deployment detected. Waiting for setup via Web UI...');
+}
+
 process.on("exit", code => {
     console.log("[PARENT-EXIT] Process manager exiting with code:", code);
 });
 
 process.on("SIGINT", () => {
-    if (botState === 'waiting' || botState === 'starting') {
+    if (botState === 'waiting' || botState === 'waiting_setup' || botState === 'starting') {
         console.log("[PARENT-SIGNAL] Ignored SIGINT from panel during startup/pairing.");
-        return; // Don't exit!
+        return; 
     }
     console.log("[PARENT-SIGNAL] SIGINT (Ctrl+C) received. Killing child and exiting.");
     if (child) child.kill('SIGINT');
@@ -259,6 +344,3 @@ process.on("uncaughtException", err => {
 process.on("unhandledRejection", (reason, promise) => {
     console.error("[PARENT-ERROR] Unhandled Rejection at:", promise, "reason:", reason);
 });
-
-// Start the bot initially
-startBot();

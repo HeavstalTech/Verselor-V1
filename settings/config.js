@@ -3,10 +3,43 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 const footer = `> \`© A Product Of Heavstal Tech™\``;
+const backupFile = path.join(__dirname, 'backup_config.json');
 
-global.usePairingCode = true // True For Pair Code // False For Qr Code
-global.phoneNumber = "" // Add your phone number here (Optional)
-global.MONGODB_URI = "" // Add your MONOGOSE URI here 
+// Default Values
+let _usePairingCode = true; // True For Pair Code // False For Qr Code
+let _phoneNumber = "";      // Enter your WhatsApp number here (Optional)
+let _MONGODB_URI = "";      // Enter your MONOGOSE URI here (Optional)
+let _AuthCode = "";         // Enter AuthCode From The Heavstal Bots Website Here (Optional)
+
+if (fs.existsSync(backupFile)) {
+    try {
+        const backup = JSON.parse(fs.readFileSync(backupFile, 'utf8'));
+        if (backup.usePairingCode !== undefined) _usePairingCode = backup.usePairingCode;
+        if (backup.phoneNumber) _phoneNumber = backup.phoneNumber;
+        if (backup.MONGODB_URI) _MONGODB_URI = backup.MONGODB_URI;
+        if (backup.AuthCode) _AuthCode = backup.AuthCode;
+    } catch (e) {
+        console.error(chalk.red('Failed to parse backup_config.json: ' + e.message));
+    }
+}
+
+const saveBackup = () => {
+    const data = {
+        usePairingCode: _usePairingCode,
+        phoneNumber: _phoneNumber,
+        MONGODB_URI: _MONGODB_URI,
+        AuthCode: _AuthCode
+    };
+    fs.writeFileSync(backupFile, JSON.stringify(data, null, 2));
+};
+saveBackup();
+Object.defineProperties(global, {
+    usePairingCode: { get: () => _usePairingCode, set: (val) => { _usePairingCode = val; saveBackup(); } },
+    phoneNumber: { get: () => _phoneNumber, set: (val) => { _phoneNumber = val; saveBackup(); } },
+    MONGODB_URI: { get: () => _MONGODB_URI, set: (val) => { _MONGODB_URI = val; saveBackup(); } },
+    AuthCode: { get: () => _AuthCode, set: (val) => { _AuthCode = val; saveBackup(); } }
+});
+
 global.packname = "Sticker By\n\n"
 global.developer = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇"
 global.ownername = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇"
@@ -74,7 +107,7 @@ try {
 
 global.version = version
 global.footer = footer
-global.owner = ['2348137256404', '2348166546725'];
+global.owner =['2348137256404', '2348166546725'];
 
 const dbMess = global.db?.data?.settings?.mess || {};
 
