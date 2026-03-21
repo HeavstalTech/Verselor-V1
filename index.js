@@ -34,16 +34,16 @@ const isCloud =
     process.env.PROJECT_DOMAIN ||         
     process.env.NORTHFLANK_SERVICE_NAME; 
 
-if (isCloud) {
-    const port = process.env.PORT || 3000;
-
-   let sseClients = [];
+let sseClients = [];
 
    function broadcastToUI(event, data) {
     sseClients.forEach(client => {
         client.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
     });
- }
+   }
+
+if (isCloud) {
+    const port = process.env.PORT || 3000;
     
     http.createServer((req, res) => {
         res.setHeader('Access-Control-Allow-Origin', '*');
