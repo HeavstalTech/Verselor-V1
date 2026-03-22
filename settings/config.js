@@ -113,40 +113,40 @@ global.owner =['2348137256404', '2348166546725'];
 const dbMess = global.db?.data?.settings?.mess || {};
 
 global.mess = {
-wait: dbMess.wait ||  `ᴘʀᴏᴄᴇssɪɴɢ...\n\n${footer}`,
-   success: dbMess.success || `ᴅᴏɴᴇ!\n\n${footer}`,
-   on: dbMess.on || `ʙᴏᴛ ɪs ᴏɴʟɪɴᴇ\n\n${footer}`, 
-   owner: dbMess.owner || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴏɴʟʏ ᴏᴡɴᴇʀ ᴀɴᴅ sᴜᴅᴏ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ\n\n${footer}`,
-   prem: dbMess.prem || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs ᴏɴʟʏ\n\n${footer}`, 
-   deployer: `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nThis command can only be accessed by the actual Deployer to prevent server conflicts.\n\nIf you want full access to the bot, type *${global.prefix}repo* to get information on how to deploy your own instance.\n\n${footer}`,
-   off: dbMess.off || `ʙᴏᴛ ɪs ɴᴏᴡ ᴏғғʟɪɴᴇ\n\n${footer}`,
-   nsfw: `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\n*ɴsғᴡ* ʜᴀs ɴᴏᴛ ʙᴇᴇɴ ᴀᴄᴛɪᴠᴇᴅ ɪɴ ᴛʜɪs ᴄʜᴀᴛ, ᴜsᴇ \`${global.prefix}nsfw on\` ᴛᴏ ᴀᴄᴛɪᴠᴀᴛᴇ it\n\n*ɴᴏᴛᴇ/ᴅɪsᴄʟᴀᴍᴇʀ:* ᴀᴄᴛɪᴠᴀᴛɪɴɢ *ɴsғᴡ* ᴡɪʟʟ ᴏᴘᴇɴ ᴀᴄᴄᴇss ᴛᴏ ᴀɢᴇ ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛs & ɪᴛ ᴀʟsᴏ ɪɴᴄʀᴇᴀsᴇs ᴛʜᴇ ᴄʜᴀɴᴄᴇs ᴏғ ɢᴇᴛᴛɪɴɢ ʙᴀɴɴᴇᴅ, ᴡʜᴀᴛsᴀᴘᴘ *ᴇxᴘʟɪᴄɪᴛʟʏ* ᴅᴏᴇs ɴᴏᴛ sᴜᴘᴘᴏʀᴛ ᴀɢᴇ ʀᴇsᴛʀɪᴄᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛs\n\n${footer}`,
-   sleep: dbMess.sleep || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴛʜɪs ʙᴏᴛ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ᴏɴ sʟᴇᴇᴘ ᴍᴏᴅᴇ.\nᴅᴇᴀᴄᴛɪᴠᴀᴛᴇ ᴛʜᴇ sʟᴇᴇᴘ ᴍᴏᴅᴇ ᴡɪᴛʜ *${global.prefix}sleep off* ᴛᴏ ᴀᴄᴄᴇss ᴀʟʟ ᴄᴏᴍᴍᴀɴᴅs\n\n${footer}`,
+   wait: dbMess.wait || `Processing...\n\n${footer}`,
+   success: dbMess.success || `Done!\n\n${footer}`,
+   on: dbMess.on || `Bot is online\n\n${footer}`, 
+   owner: dbMess.owner || `*ACCESS DENIED*\n\nOnly owner and sudo users can access this command\n\n${footer}`,
+   prem: dbMess.prem || `*ACCESS DENIED*\n\nPremium users only\n\n${footer}`, 
+   deployer: `*ACCESS DENIED*\n\nThis command can only be accessed by the actual Deployer to prevent server conflicts.\n\nIf you want full access to the bot, type *${global.prefix}repo* to get information on how to deploy your own instance.\n\n${footer}`,
+   off: dbMess.off || `Bot is now offline\n\n${footer}`,
+   nsfw: `*ACCESS DENIED*\n\n*NSFW* has not been activated in this chat, use \`${global.prefix}nsfw on\` to activate it\n\n*Note/Disclaimer:* Activating *NSFW* will open access to age restricted contents & it also increases the chances of getting banned, WhatsApp *explicitly* does not support age restricted contents\n\n${footer}`,
+   sleep: dbMess.sleep || `*ACCESS DENIED*\n\nThis bot is currently on sleep mode.\nDeactivate the sleep mode with *${global.prefix}sleep off* to access all commands\n\n${footer}`,
    query: {
-       text: `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴛʜᴇʀᴇ ɪs ɴᴏᴛ ᴛᴇxᴛ, ᴘʀᴏᴠɪᴅᴇ ᴀ ᴛᴇxᴛ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ\n\n${footer}`,
-       link: `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴘʀᴏᴠɪᴅᴇ ᴀ ʟɪɴᴋ ᴛᴏ ᴄᴏɴᴛɪɴᴜᴇ\n\n${footer}`,
+       text: `*ACCESS DENIED*\n\nThere is no text, provide a text to continue\n\n${footer}`,
+       link: `*ACCESS DENIED*\n\nProvide a link to continue\n\n${footer}`,
        footer: footer,
    },
    error: {
-       fitur: `*𝐀𝐍 𝐔𝐍𝐄𝐗𝐏𝐄𝐂𝐓𝐄𝐃 𝐄𝐑𝐑𝐎𝐑 𝐇𝐀𝐒 𝐎𝐂𝐂𝐔𝐑𝐄𝐃*\nᴡᴇ ᴇɴᴄᴏᴜɴᴛᴇʀᴇᴅ ᴀɴ ᴇʀʀᴏʀ ᴡʜɪʟᴇ ᴛʀʏɪɴɢ ᴛᴏ ʀᴜɴ/ᴇxᴄᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ, ᴜsᴇ ᴛʜᴇ ${global.prefix}support ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʙᴏᴛ’s ɢᴄ ᴀɴᴅ sᴜʙᴍɪᴛ ᴛʜᴇ ᴇʀʀᴏʀ ʙᴇʟᴏᴡ:\n`,
-       feature: `*𝐀𝐍 𝐔𝐍𝐄𝐗𝐏𝐄𝐂𝐓𝐄𝐃 𝐄𝐑𝐑𝐎𝐑 𝐇𝐀𝐒 𝐎𝐂𝐂𝐔𝐑𝐄𝐃*\nᴡᴇ ᴇɴᴄᴏᴜɴᴛᴇʀᴇᴅ ᴀɴ ᴇʀʀᴏʀ ᴡʜɪʟᴇ ᴛʀʏɪɴɢ ᴛᴏ ʀᴜɴ/ᴇxᴄᴇᴄᴜᴛᴇ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ, ᴜsᴇ ᴛʜᴇ ${global.prefix}support ᴄᴏᴍᴍᴀɴᴅ ᴛᴏ ɢᴇᴛ ᴛʜᴇ ʙᴏᴛ’s ɢᴄ ᴀɴᴅ sᴜʙᴍɪᴛ ᴛʜᴇ ᴇʀʀᴏʀ ʙᴇʟᴏᴡ:\n`,
-       body: `*𝐔𝐍𝐄𝐗𝐏𝐄𝐂𝐓𝐄𝐃 𝐄𝐑𝐑𝐎𝐑*\n\nᴀɴ ᴜɴᴇxᴘᴇᴄᴛᴇᴅ ᴇʀʀᴏʀ ʜᴀs ᴏᴄᴄᴜʀʀᴇᴅ, ᴋɪɴᴅʟʏ ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ ᴡɪᴛʜ ᴛʜᴇ ᴇʀʀᴏʀ ᴍᴇssᴀɢᴇ ʙᴇʟᴏᴡ ᴀɴᴅ ᴀ sᴄʀᴇᴇɴsʜᴏᴛ ᴏғ ᴛʜᴇ ᴘʀᴏᴄᴇss\n\n${footer}`,
+       fitur: `*AN UNEXPECTED ERROR HAS OCCURRED*\nWe encountered an error while trying to run/execute this command, use the ${global.prefix}support command to get the bot's gc and submit the error below:\n`,
+       feature: `*AN UNEXPECTED ERROR HAS OCCURRED*\nWe encountered an error while trying to run/execute this command, use the ${global.prefix}support command to get the bot's gc and submit the error below:\n`,
+       body: `*UNEXPECTED ERROR*\n\nAn unexpected error has occurred, kindly contact the bot developer with the error message below and a screenshot of the process\n\n${footer}`,
    },
    only: {
-       group: dbMess.group || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴛʜɪs ғᴇᴀᴛᴜʀᴇ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ɪɴ ɢʀᴏᴜᴘs ᴄʜᴀᴛs\n\n${footer}`,
-       private: dbMess.private || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴛʜɪs ғᴇᴀᴛᴜʀᴇ ᴄᴀɴ ᴏɴʟʏ ʙᴇ ᴜsᴇᴅ ɪɴ ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛs\n\n${footer}`,
-       owner: dbMess.owner || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\nᴏᴡɴᴇʀ ᴏɴʟʏ ʜᴀs ᴀᴜᴛʜᴏʀɪᴢᴀᴛɪᴏɴ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ\n\n${footer}`,
-       admin: dbMess.admin || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴀᴄᴄᴇss ᴛʜɪs ғᴇᴀᴛᴜʀᴇ\n\n${footer}`,
-       ban: dbMess.ban || `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nʏᴏᴜ ʜᴀᴠᴇ ʙᴇᴇɴ ʙᴀɴɴᴇᴅ ғʀᴏᴍ ᴜsɪɴɢ ᴛʜɪs ʙᴏᴛ!\n\n${footer}`,
-       badmin: `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nʙᴏᴛ ɪs ɴᴏᴛ ʏᴇᴛ ᴀᴅᴍɪɴ, ᴛᴏ ᴜsᴇ ᴛʜɪs ғᴇᴀᴛᴜʀᴇ ᴍᴀᴋᴇ ᴛʜᴇ ʙᴏᴛ ᴀɴ ᴀᴅᴍɪɴ${footer}`,
-       premium: `*𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃*\n\nᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs ᴄᴀɴ ᴀᴄᴄᴇss ᴛʜɪs ғᴇᴀᴛᴜʀᴇ\n\n${footer}`,
+       group: dbMess.group || `*ACCESS DENIED*\n\nThis feature can only be used in group chats\n\n${footer}`,
+       private: dbMess.private || `*ACCESS DENIED*\n\nThis feature can only be used in private chats\n\n${footer}`,
+       owner: dbMess.owner || `*ACCESS DENIED*\nOwner only has authorization to use this bot\n\n${footer}`,
+       admin: dbMess.admin || `*ACCESS DENIED*\n\nOnly admins can access this feature\n\n${footer}`,
+       ban: dbMess.ban || `*ACCESS DENIED*\n\nYou have been banned from using this bot!\n\n${footer}`,
+       badmin: `*ACCESS DENIED*\n\nBot is not yet admin, to use this feature make the bot an admin\n\n${footer}`,
+       premium: `*ACCESS DENIED*\n\nOnly premium users can access this feature\n\n${footer}`,
    }
 }
 
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
-fs.unwatchFile(file)
-console.log(chalk.redBright(`Update ${__filename}`))
-delete require.cache[file]
-require(file)
+    fs.unwatchFile(file)
+    console.log(chalk.redBright(`Update ${__filename}`))
+    delete require.cache[file]
+    require(file)
 });

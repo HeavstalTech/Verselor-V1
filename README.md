@@ -17,7 +17,7 @@
 
 - [BOT INFO](#bot-info)
 - [BOT SETTINGS (Default)](#bot-settings-default)
-- [NOTABLE COMMANDS](#notable-features)
+- [NOTABLE FEATURES](#notable-features)
 - [LIVE DEMO](#live-demo)
 - [Important Notice](#important-notice)
 - [☁️ CLOUD DEPLOYMENT](#️-cloud-deployment)
