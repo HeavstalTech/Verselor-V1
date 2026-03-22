@@ -17,7 +17,7 @@
 
 - [BOT INFO](#bot-info)
 - [BOT SETTINGS (Default)](#bot-settings-default)
-- [NOTABLE COMMANDS](#notable-commands)
+- [NOTABLE COMMANDS](#notable-features)
 - [LIVE DEMO](#live-demo)
 - [Important Notice](#important-notice)
 - [☁️ CLOUD DEPLOYMENT](#️-cloud-deployment)
@@ -47,17 +47,19 @@
 ## BOT INFO
  
 **┣ Name:** _Verselor V1_<br>
-**┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, & Multi-Tenant WhatsApp bot, built by Heavstal Tech. 2026_<br>
+**┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, Multi-Tenant & Multilingual WhatsApp bot, built by Heavstal Tech. 2026_<br>
 **┣ Version:** _1.0.0 (Latest)_<br>
 **┣ Maintained:**  _[ YES ]_<br>
 **┣ Developer:** _HEAVSTAL TECH_<br>
-**┣ Total Commands:** _570 (as of Thur 19, March, 2026)_<br>
+**┣ Language:** _English(en - Defult)<br>
+**┣ Total Commands:** _570+ (as of Thur 19, March, 2026)_<br>
 **┣ Created On:** _January 10th, 2026_<br>
 
 ## BOT SETTINGS (Default)
 
 **┣ Prefix:** _[ . ]_<br>
 **┣ Menu Style:** _v1_<br>
+**┣ Language:** _English(en - Defult)<br>
 **┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_<br>
 **┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_<br>
 **┣ Public Mode:** _On_<br>
@@ -75,9 +77,11 @@
 **┣ Warn Limit:** _3_<br>
 **┣ Time Zone:** _Africa/Lagos_<br>
 
-### NOTABLE COMMANDS
+### NOTABLE FEATURES 
 
-1. **➭ verselor:** one of VERSELOR V1's most notable command is the *verselor/bot-ai/boatai/bai* command, known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.
+1. **➭ verselor || botai:** one of VERSELOR V1's most notable command is the *verselor/bot-ai/boatai/bai* command, known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.
+
+2. **➭ setlanguage || setlang:** This command is designed to help Non-English users. An French user can easily use "setlang fr" or "setlanguage french" and the bot's gloabl output will change from defult English to French (fr)
 
 ---
 

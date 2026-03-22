@@ -50,6 +50,7 @@ global.CAPTION = `𝗩𝗘𝗥𝗦𝗘𝗟𝗢𝗥 𝗩𝟭 ²⁶`
 const dbMap = {
             prefix: "prefix",
             timezone:  "timezone",
+            language: "language",
             menu: 'menu',
             thumbnail: "thumbnail",
             HT_API_KEY: "HT_API_KEY",
