@@ -18,6 +18,7 @@
 - [BOT INFO](#bot-info)
 - [BOT SETTINGS (Default)](#bot-settings-default)
 - [NOTABLE COMMANDS](#notable-commands)
+- [LIVE DEMO](#live-demo)
 - [Important Notice](#important-notice)
 - [☁️ CLOUD DEPLOYMENT](#️-cloud-deployment)
   - [While Using Render](#while-using-render--)
@@ -77,6 +78,12 @@
 ### NOTABLE COMMANDS
 
 1. **➭ verselor:** one of VERSELOR V1's most notable command is the *verselor/bot-ai/boatai/bai* command, known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.
+
+---
+
+### LIVE DEMO
+**This gif shows a live demo (gif) of this bot executing the "menu" command**
+![image](https://picsur.org/i/e5e371f8-8e19-411e-b350-578e870c62e0.jpg)
 
 ---
 
