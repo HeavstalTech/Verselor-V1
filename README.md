@@ -241,12 +241,17 @@ This project is licensed under the **MIT License**.
 
 You may obtain a copy of this file by any means, most part of this file is open source any you may copy this parts for personal use but you must give credit to **Heavstal Tech** but trying to de-obfuscated the obfuscated part of this file, re-brand or do any unauthorized activity with this file is strictly prohibited and may lead to legal issues.
 
+---
+### Chronicles Of Mr. Promise
+
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74038190/235224431-e8c8c12e-6826-47f1-89fb-2ddad83b3abf.gif" width="220"/>
 </p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212748830-4c709398-a386-4761-84d7-9e10b98fbe6e.gif" width="220"/>
 </p>
+
+---
 
 <h2 align="center">© A Product Of Heavstal Tech™<br></h2>
 
