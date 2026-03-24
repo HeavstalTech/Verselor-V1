@@ -13,11 +13,17 @@
 <a href="https://github.com/HeavstalTech/Verselor-V1/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
 
+<a id="development-note"></a>
+> [!NOTE]
+> **This is a beta release. Bugs may occur**
+> 
+
 ## 📑 TABLE OF CONTENTS
 
 - [BOT INFO](#bot-info)
 - [BOT SETTINGS (Default)](#bot-settings-default)
 - [NOTABLE FEATURES](#notable-features)
+- [COMMAND CATEGORIES](#command-categories)
 - [LIVE DEMO](#live-demo)
 - [Important Notice](#important-notice)
 - [☁️ CLOUD DEPLOYMENT](#️-cloud-deployment)
@@ -30,6 +36,7 @@
   - [Method 1: Using Pair Code](#method-1-using-pair-code)
   - [Method 2: Using QR Code](#method-2-using-qr-code)
   - [Katabump Deployment Tip](#katabump-tip)
+- [Local Deployment Service Recommendations](#local-deployment-service-recommendations) 
 - [💻 COMMAND LINE INSTALLATION (Termux/VPS)](#-command-line-installation-termuxvps-)
   - [Requirements](#requirements)
   - [For Termux Users](#for-termux-users)
@@ -38,7 +45,6 @@
 - [Buy Me A Coffee / Donate](#buy-me-a-coffee--donate)
 - [Join Our Bot Support & Group Chats](#join-our-bot-support--group-chats-)
 - [Caution (Account Ban Risk)](#caution-notice)
-- [Development Note](#development-note)
 - [License](#license)
 - [Copyright Notice](#copyright-notice)
 
@@ -48,10 +54,10 @@
  
 **┣ Name:** _Verselor V1_<br>
 **┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, Multi-Tenant & Multilingual WhatsApp bot, built by Heavstal Tech. 2026_<br>
-**┣ Version:** _1.0.0 (Latest)_<br>
+**┣ Version:** _1.0.0 (V1 - Latest)_<br>
 **┣ Maintained:**  _[ YES ]_<br>
 **┣ Developer:** _HEAVSTAL TECH_<br>
-**┣ Language:** _English(en - Defult)<br>
+**┣ Language:** _English(en - Default)<br>
 **┣ Total Commands:** _570+ (as of Thur 19, March, 2026)_<br>
 **┣ Created On:** _January 10th, 2026_<br>
 
@@ -59,7 +65,7 @@
 
 **┣ Prefix:** _[ . ]_<br>
 **┣ Menu Style:** _v1_<br>
-**┣ Language:** _English(en - Defult)<br>
+**┣ Language:** _English(en - Default)<br>
 **┣ Thumbnail:** _[HERE](https://files.catbox.moe/a2ullf.jpg)_<br>
 **┣ HT API KEY:** _[GET HERE](https://heavstal-tech.vercel.app/credentials)_<br>
 **┣ Public Mode:** _On_<br>
@@ -80,9 +86,110 @@
 
 ### NOTABLE FEATURES 
 
-1. **➭ verselor || botai:** one of VERSELOR V1's most notable command is the *verselor/bot-ai/boatai/bai* command, known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.
+1. **➭ pair || connect (Multi-Tenancy):** 
+    While 99.8% of WhatsApp Bots out there only grants a "one user - one instance" system, Verselor V1 has taken a wild turn with a "pair/connect" command which grants it it's "Multi-Tenant Feature - General Spoken Of As Verselor V1’s most unique & advanced command, this command allows a user to connect multiple users to the bot, each with their own instance of the bot, all managed under one server, single process & one cluster - all happening flawlessly.
 
-2. **➭ setlanguage || setlang:** This command is designed to help Non-English users. An French user can easily use "setlang fr" or "setlanguage french" and the bot's gloabl output will change from defult English to French (fr)
+2. **➭ verselor || botai (AI Advancement):** 
+    One of Verselor V1’s most notable command is the *verselor/bot-ai/boatai/bai* command, categorized as Verselor V1’s most "smartest" feature - known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.
+
+3. **➭ setlanguage || setlang (Multilingual System):** 
+    As generally known, 99.9 percent of WhatsApp bot out there is only assigned to one language, making it extremely difficult for users who doesn't understand that language to use the bot - Verselor V1 has addressed this issue by importing a "Multilingual" system that address users to their general language by their set timezone or setlanguage with the "setlang/setlanguage" command - This command is designed to help Non-English users. An French user can easily use "setlang fr" or "setlanguage french" and the bot's global output will change from Default English to French (fr)
+
+
+**Verselor V1 actively solves the problems that other bots constantly ignore which is why it strongly & heavily stands out among other WhatsApp bots**
+
+
+### COMMAND CATEGORIES
+**This Bot is stacked with commands ranging from Group, Tools, AI, Fun, Game etc. see the list below for list.** <br>
+
+**Command Categories**
+<p><i>Click on any category below to expand and see the most useful commands!</i></p>
+
+<details> 
+ <summary><b>Helpers & AI</b></summary>
+ <ul>
+  <li><code>.botai</code> - Talk to the bot's internal expert AI (can execute commands for you).</li>
+  <li><code>.gpt4</code> / <code>.gemini</code> - Chat with highly advanced AI models.</li>
+  <li><code>.gimage</code> - Generate AI images from a text prompt.</li>
+  <li><code>.tr</code> - Translate any text to English.</li>
+  <li><code>.menu</code> - Display the full, complete list of commands.</li>
+  <li><code>.ping</code> - Check the bot's latency and server RAM stats.</li>
+ </ul>
+</details>
+
+<details> 
+ <summary><b>Group Management</b></summary>
+ <ul>
+  <li><code>.add</code> / <code>.kick</code> - Instantly add or remove members (supports country code mass-kick).</li>
+  <li><code>.promote</code> / <code>.demote</code> - Grant or revoke admin privileges.</li>
+  <li><code>.mute</code> / <code>.unmute</code> - Lock or unlock the group chat.</li>
+  <li><code>.tagall</code> / <code>.hidetag</code> - Mention everyone in the group.</li>
+  <li><code>.group-events</code> - Toggle automatic welcome/leave/promote notifications.</li>
+  <li><code>.linkgroup</code> - Fetch the group's invite link.</li>
+ </ul>
+</details>
+
+<details> 
+ <summary><b>Owner Only Commands</b></summary>
+ <ul>
+  <li><code>.public</code> / <code>.self</code> - Toggle whether the bot responds to everyone or just you.</li>
+  <li><code>.banchat</code> / <code>.ban</code> - Blacklist a specific group or user from using the bot.</li>
+  <li><code>.setprefix</code> / <code>.setbotimg</code> - Customize the bot's prefix and menu thumbnail.</li>
+  <li><code>.addsudo</code> / <code>.delsudo</code> - Give special moderator access to trusted friends.</li>
+  <li><code>.update</code> - Automatically pull the latest code from GitHub and restart.</li>
+  <li><code>.restart</code> / <code>.shutdown</code> - Manage the bot's server process.</li>
+ </ul>
+</details>
+
+<details> 
+ <summary><b>Tools & Utilities</b></summary>
+ <ul>
+  <li><code>.sticker</code> - Convert any image, video, or GIF into a WhatsApp sticker.</li>
+  <li><code>.tourl</code> - Upload a media file to the cloud and get a shareable link.</li>
+  <li><code>.remini</code> / <code>.hd</code> - Upscale and enhance the quality of blurry images.</li>
+  <li><code>.tts</code> - Convert your text into a voice note (Text-to-Speech).</li>
+  <li><code>.ss</code> - Take a high-quality screenshot of any website.</li>
+  <li><code>.detect</code> - Analyze text to check if it was generated by AI.</li>
+  <li><code>.vv</code> - Expose and save "View Once" media.</li>
+ </ul>
+</details>
+
+<details> 
+ <summary><b>Downloaders</b></summary>
+ <ul>
+  <li><code>.play</code> / <code>.video</code> - Download high-quality audio or video from YouTube.</li>
+  <li><code>.tiktok</code> - Download TikTok videos without the watermark.</li>
+  <li><code>.instagram</code> / <code>.twitter</code> - Download Reels, videos, and images from IG/X.</li>
+  <li><code>.mediafire</code> / <code>.gdrive</code> - Extract and download files directly from cloud links.</li>
+  <li><code>.apk</code> - Search for and download Android apps.</li>
+ </ul>
+</details>
+
+<details> 
+ <summary><b>Fun & Anime</b></summary>
+ <ul>
+  <li><code>.meme</code> / <code>.joke</code> - Get a random funny meme or programming/dad joke.</li>
+  <li><code>.couple</code> / <code>.soulmate</code> - Randomly "ship" two members in a group chat.</li>
+  <li><code>.waifu</code> - Get random aesthetic anime waifu pictures.</li>
+  <li><code>.cry</code> / <code>.hug</code> / <code>.pat</code> - Send animated anime reaction stickers to friends.</li>
+  <li><code>.pickupline</code> - Generate a cheesy pickup line/rizz.</li>
+  <li><code>.fact</code> - Learn a random fun fact, math fact, or science fact.</li>
+ </ul>
+</details>
+
+<details> 
+ <summary><b>Games & Economy</b></summary>
+ <ul>
+  <li><code>.math</code> / <code>.emojiquiz</code> / <code>.trivia</code> - Quick chat games to earn virtual money.</li>
+  <li><code>.wordchain</code> - Start a hardcore word-chain game with the group.</li>
+  <li><code>.tictactoe</code> - Play Tic-Tac-Toe against another group member.</li>
+  <li><code>.daily</code> / <code>.work</code> - Claim your daily reward or work a job for cash.</li>
+  <li><code>.gamble</code> / <code>.rob</code> - Risk your wallet to double your money or steal from a friend.</li>
+  <li><code>.bal</code> / <code>.lb</code> - Check your wallet balance and view the richest users leaderboard.</li>
+ </ul>
+</details>
+
+**And This is just a breeze compared to what you'll have when you deploy, so don't wait no more, follow the instructions below to get started.**
 
 ---
 
@@ -95,18 +202,20 @@
 <a id="important-notice"></a>
 >  [!IMPORTANT]
 > **[Fork](https://github.com/HeavstalTech/Verselor-V1/fork) this repository**
+> **Also star to support the developers of this bot and promote popularity**
 
 ---
 
 # ☁️ CLOUD DEPLOYMENT
 
+**Important Note:** After clicking Deploy, copy and go to the given link provided by the service, wait about 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your[AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
+
 ## While Using Render ![Verified](https://img.shields.io/badge/verified-yes-success) ![Status](https://img.shields.io/badge/status-tested%20%26%20working-brightgreen)
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/HeavstalTech/Verselor-V1)<br>
-**Important Note:** After clicking Deploy to Render, copy and go to the given link, wait abt 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your[AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
+
 
 ## While Using Replit<br> ![Verified](https://img.shields.io/badge/verified-yes-success) ![Status](https://img.shields.io/badge/status-tested%20%26%20working-brightgreen)
 [![Run on Replit](https://replit.com/badge/github/HeavstalTech/Verselor-V1)](https://replit.com/new/github/HeavstalTech/Verselor-V1)<br>
-**Important Note:** After clicking Run on Replit, copy and go to the given link, wait abt 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your [AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
 ## While Using Heroku<br> ![Verified](https://img.shields.io/badge/verified-no-yellow) ![Status](https://img.shields.io/badge/status-not%20tested%20%26%20not%20guaranteed-yellow)
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/HeavstalTech/Verselor-V1)<br>
@@ -115,7 +224,6 @@
 1. `heroku/nodejs`
 2. `https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`
 3. `https://github.com/clhuang/heroku-buildpack-webp-binaries.git`
-**Important Note:** After clicking Deploy on Heroku, copy and go to the given link, wait abt 5-7 minutes (if it's a fist time build), a website dashboard will appear, enter your [AuthCode](https://heavstl-bots.vercel.app/authcode) & [WhatsApp Number](https://WhatsApp.com) and click deploy, you'll receive a 8 digit code in less than a minute, Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
 
 ## While Using Koyeb<br> ![Verified](https://img.shields.io/badge/verified-no-yellow) ![Status](https://img.shields.io/badge/status-not%20tested%20%26%20not%20guaranteed-yellow)
@@ -139,13 +247,31 @@
 > 5. Navigate to your server console and start the deployment (Click Start or run `npm install && npm start`).
 > 6. Wait approximately 2 minutes for dependencies to install.
 > 7. When prompted in the console, **input your WhatsApp number** (Country Code + Number).
-> 8. A Code will appear. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
+> 8. When prompted for **AuthCode**, Enter your authcode wait for it to verify (don't have an AuthCode? Get [Here](https://heavstal-bots.vercel.app/authcode))
+> 9. A Code will appear. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
 
 ## Method 2: Using QR Code
-> 1. Open `settings/config.js` and set `usePairingCode` to `false`.
-> 2. Follow steps 1-5 from above (Upload, Unzip, Start).
-> 3. A QR Code will appear in the console.
-> 4. Go to WhatsApp → Linked Devices → Link a Device and scan the QR code.
+> 1. Open `settings/config.js` and set `usePairingCode` to `false`.<br>
+**EXMAPLE:**
+Before (Default):
+
+```js
+let _usePairingCode = process.env.USE_PAIR_CODE !== undefined ? (process.env.USE_PAIR_CODE === 'true') : true; // True For Pair Code // False For Qr Code
+```
+After (Changed to QR Code - Copy & Paste):
+
+```js
+let _usePairingCode = process.env.USE_PAIR_CODE !== undefined ? (process.env.USE_PAIR_CODE === 'true') : false; // True For Pair Code // False For Qr Code
+```
+
+**Alternatively**, as a casual user, you can completely delete all the complicated environment variable stuff and just hardcode it like this (Copy & Paste):
+
+```js
+let _usePairingCode = false; // True For Pair Code // False For Qr Code
+```
+> 3. Follow steps 1-5 from above (Upload, Unzip, Start).
+> 4. A QR Code will appear in the console.
+> 5. Go to WhatsApp → Linked Devices → Link a Device and scan the QR code.
 
 <a id="katabump-tip"></a>
 > [!TIP]
@@ -154,15 +280,32 @@
 > 1. [Fork This Repo](https://github.com/HeavstalTech/Verselor-V1/fork)
 > 2. Navigate To [Settings Folder](https://github.com/HeavstalTech/Verselor-V1/tree/main/settings) and enter the [config.js file](https://github.com/HeavstalTech/Verselor-V1/blob/main/settings/config.js)
 > 3. Click the three dots (...) --> [Edit In place](https://github.com/HeavstalTech/Verselor-V1/edit/main/settings/config.js)
-> 4. Add your [WhatsApp](https://whatsapp.com) Number to the place that says *_phoneNumber*, add it in between the *""* in country code format 
-> 5. Commit - Commit Change
+> 4. Add your [WhatsApp](https://whatsapp.com) Number to the place that says *_phoneNumber*, add it in between the *""* in country code format
+
+**Exmaple:**
+Before (Default):
+```js
+let _phoneNumber = proces.env.WHATSAPP_NUMBER || "";      // Enter your WhatsApp number here (Optional)
+```
+
+After Adding your Number (replace "234xxx" with your actual WhatsApp number and country code without "+" - Copy and paste)
+```js
+let _phoneNumber = proces.env.WHATSAPP_NUMBER || "234xxx";  // Enter your WhatsApp number here (Optional)
+```
+
+Alternatively you can do (replace "234xxx" with your actual WhatsApp number and country code without "+" - Copy and paste):
+
+```js
+let _phoneNumber = "234xxx";  // Enter your WhatsApp number here (Optional)
+```
+
+> 5. Commit changes... - Commit Change
 > 6. Follow All The Steps from *METHOD 1*
 
-## Local Deployment Service Recommendations 
+## Local Deployment Service Recommendations
 
 1. Deploy On [Katabump](https://dashboard.katabump.com/auth/login#7d6b58) - follow the steps [HERE](#katabump-tip)
 2. Deploy on [Bot-Hosting](https://bot-hosting.net/?aff=1317266904024350732) - follow the step [HERE](#-web-panel-deployment-)
-4. 
 ---
 
 ### 💻 COMMAND LINE INSTALLATION (Termux/VPS) ![Verified](https://img.shields.io/badge/verified-no-yellow) ![Status](https://img.shields.io/badge/status-not%20tested%20%26%20not%20guaranteed-yellow)
@@ -233,11 +376,6 @@ npm start
 > *Verselor-V1* is not made by WhatsApp Inc. Misusing the bot might ban your WhatsApp account!* - *In Such Scenerios, Heavstal Tech is not responsible for the banning of your account.* - *Use Verselor-V1 at your own risk by keeping this warning in mind.*<br>
 > **To reduce the risk of this slightly:**
 > - Consider turning **off startup messages** in with the command after deployment....
-
-<a id="development-note"></a>
-> [!NOTE]
-> **This bot is still under development, trying to deploy this current script as it is will cause a deployment/build failure...**
-
 
 ### License
 

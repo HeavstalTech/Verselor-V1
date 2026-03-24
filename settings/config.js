@@ -6,7 +6,7 @@ const footer = `> \`© A Product Of Heavstal Tech™\``;
 const backupFile = path.join(__dirname, 'backup_config.json');
 
 // Default Values
-let _usePairingCode = process.env.USE_PAIR_CODE || true; // True For Pair Code // False For Qr Code
+let _usePairingCode = process.env.USE_PAIR_CODE !== undefined ? (process.env.USE_PAIR_CODE === 'true') : true; // True For Pair Code // False For Qr Code
 let _phoneNumber = proces.env.WHATSAPP_NUMBER || "";      // Enter your WhatsApp number here (Optional)
 let _MONGODB_URI = process.env.MONGODB_URI || "";      // Enter your MONOGOSE URI here (Optional)
 let _AuthCode = process.env.AUTH_CODE || "";         // Enter AuthCode From The Heavstal Bots Website Here (Optional)
