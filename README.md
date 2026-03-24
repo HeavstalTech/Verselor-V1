@@ -75,6 +75,7 @@
 **┣ AutoView Status:** _Off_<br>
 **┣ Auto Bio:** _Off_<br>
 **┣ Warn Limit:** _3_<br>
+**┣ Anti-Bug/Virus:** _On_<br>
 **┣ Time Zone:** _Africa/Lagos_<br>
 
 ### NOTABLE FEATURES 
@@ -122,7 +123,7 @@
 **Note:** _Koyeb will automatically detect the Dockerfile and build the bot. Once deployed, open your Koyeb App URL to access the Control Panel and pair your number._
 
 ## While Using TalkDrove ![Verified](https://img.shields.io/badge/verified-no-yellow) ![Status](https://img.shields.io/badge/status-not%20tested%20%26%20not%20guaranteed-yellow)
-<a href="https://host.talkdrove.com">
+<a href="https://host.talkdrove.com/auth/signup?ref=FD5A76F8">
 <img src="https://img.shields.io/badge/Deploy-TalkDrove-blueviolet"></a><br>
 **Note:** _Create an account, link your GitHub, select your forked Verselor-V1 repository, and deploy using the Node.js/Docker environment._
 ---
@@ -157,6 +158,11 @@
 > 5. Commit - Commit Change
 > 6. Follow All The Steps from *METHOD 1*
 
+## Local Deployment Service Recommendations 
+
+1. Deploy On [Katabump](https://dashboard.katabump.com/auth/login#7d6b58) - follow the steps [HERE](#katabump-tip)
+2. Deploy on [Bot-Hosting](https://bot-hosting.net/?aff=1317266904024350732) - follow the step [HERE](#-web-panel-deployment-)
+4. 
 ---
 
 ### 💻 COMMAND LINE INSTALLATION (Termux/VPS) ![Verified](https://img.shields.io/badge/verified-no-yellow) ![Status](https://img.shields.io/badge/status-not%20tested%20%26%20not%20guaranteed-yellow)

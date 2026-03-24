@@ -1,10 +1,24 @@
 {
-  "name": "Verselor-V1",
-  "description": "A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, & Multi-Tenant WhatsApp bot, built by Heavstal Tech. 2026",
-  "repository": "https://github.com/HeavstalTech/Verselor-V1",
-  "website": "https://heavstal-bots.vercel.app",
+  "name": "VERSELOR-V1",
+  "description": "A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, Multi-Tenant & Multilingual WhatsApp bot, built by Heavstal Tech. 2026",
   "logo": "https://files.catbox.moe/g8pxls.png",
-  "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "Commonjs"],
+  "keywords":[
+    "heavstal-tech",
+    "baileys",
+    "multi-device",
+    "Heavstal Tech",
+    "WhatsApp",
+    "Verselor V1",
+    "2026",
+    "Mr. Promise",
+    "Nodejs",
+    "bot",
+    "WhatsApp bot",
+    "WhatsApp automation",
+    "Commonjs"
+  ],
+  "documentation-link": "https://heavstal-bots.vercel.app/docs/verselor-v1",
+  "owner-verification": "heavstaltech@gmail.com",
   "env": {
     "USE_PAIR_CODE": {
       "description": "type `true` to get pair code and `false` to get qr code",
@@ -166,16 +180,5 @@
       "value": "*ʜᴇʟʟᴏ*\n\nVERSELOR V1 IS ALIVE",
       "required": false
     }
-  },
-  "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-    },
-    {
-      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
-    }
-  ]
+  }
 }
