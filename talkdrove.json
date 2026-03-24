@@ -18,7 +18,7 @@
     "Commonjs"
   ],
   "documentation-link": "https://heavstal-bots.vercel.app/docs/verselor-v1",
-  "owner-verification": "heavstaltech@gmail.com",
+  "owner-verification": "ekivererep@gmail.com",
   "env": {
     "USE_PAIR_CODE": {
       "description": "type `true` to get pair code and `false` to get qr code",
