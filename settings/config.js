@@ -1,13 +1,16 @@
 // settings/config.js
-const fs = require('fs');
-const path = require('path');
-const chalk = require('chalk');
+import fs from 'fs';
+import path from 'path';
+import chalk from 'chalk';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const footer = `> \`© A Product Of Heavstal Tech™\``;
 const backupFile = path.join(__dirname, 'backup_config.json');
 
 // Default Values
 let _usePairingCode = process.env.USE_PAIR_CODE !== undefined ? (process.env.USE_PAIR_CODE === 'true') : true; // True For Pair Code // False For Qr Code
-let _phoneNumber = proces.env.WHATSAPP_NUMBER || "";      // Enter your WhatsApp number here (Optional)
+let _phoneNumber = process.env.WHATSAPP_NUMBER || "";      // Enter your WhatsApp number here (Optional) // Fixed: proces.env -> process.env
 let _MONGODB_URI = process.env.MONGODB_URI || "";      // Enter your MONOGOSE URI here (Optional)
 let _AuthCode = process.env.AUTH_CODE || "";         // Enter AuthCode From The Heavstal Bots Website Here (Optional)
 
@@ -33,6 +36,7 @@ const saveBackup = () => {
     fs.writeFileSync(backupFile, JSON.stringify(data, null, 2));
 };
 saveBackup();
+
 Object.defineProperties(global, {
     usePairingCode: { get: () => _usePairingCode, set: (val) => { _usePairingCode = val; saveBackup(); } },
     phoneNumber: { get: () => _phoneNumber, set: (val) => { _phoneNumber = val; saveBackup(); } },
@@ -40,40 +44,40 @@ Object.defineProperties(global, {
     AuthCode: { get: () => _AuthCode, set: (val) => { _AuthCode = val; saveBackup(); } }
 });
 
-global.packname = "Sticker By\n\n"
-global.developer = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇"
-global.ownername = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇"
-global.botname = "𝐕𝐄𝐑𝐒𝐄𝐋𝐎𝐑 𝐕𝟏"
-global.author = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇"
-global.CAPTION = `𝗩𝗘𝗥𝗦𝗘𝗟𝗢𝗥 𝗩𝟭 ²⁶`
+global.packname = "Sticker By\n\n";
+global.developer = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇";
+global.ownername = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇";
+global.botname = "𝐕𝐄𝐑𝐒𝐄𝐋𝐎𝐑 𝐕𝟏";
+global.author = "𝐇𝐄𝐀𝐕𝐒𝐓𝐀𝐋 𝐓𝐄𝐂𝐇";
+global.CAPTION = `𝗩𝗘𝗥𝗦𝗘𝗟𝗢𝗥 𝗩𝟭 ²⁶`;
 
 const dbMap = {
-            prefix: "prefix",
-            timezone:  "timezone",
-            language: "language",
-            menu: 'menu',
-            thumbnail: "thumbnail",
-            HT_API_KEY: "HT_API_KEY",
-            publicX: "publicX",
-            sleep: "sleep",
-            onlyprivate: "onlyprivate",
-            onlygroup: "onlygroup",
-            startup: "startup",
-            Areact: "Areact",
-            autoRecord: "autoRecord",
-            autoTyping: "autoTyping",
-            autoRecordtype: "autoRecordtype",
-            autoRead: "autoRead",
-            autobio: "autobio",
-            autoViewStatus: "autoViewStatus",
-            warnLimit: "warnLimit",
-            AiName: "AiName",
-            AiOwner: "AiOwner",
-            ai_persona: "ai_persona",
-            ai2_mode: "ai2_mode",
-            onlypc: "onlypc",
-            onlygc: "onlygc",
-            AliveMsg: "AliveMsg"
+    prefix: "prefix",
+    timezone:  "timezone",
+    language: "language",
+    menu: 'menu',
+    thumbnail: "thumbnail",
+    HT_API_KEY: "HT_API_KEY",
+    publicX: "publicX",
+    sleep: "sleep",
+    onlyprivate: "onlyprivate",
+    onlygroup: "onlygroup",
+    startup: "startup",
+    Areact: "Areact",
+    autoRecord: "autoRecord",
+    autoTyping: "autoTyping",
+    autoRecordtype: "autoRecordtype",
+    autoRead: "autoRead",
+    autobio: "autobio",
+    autoViewStatus: "autoViewStatus",
+    warnLimit: "warnLimit",
+    AiName: "AiName",
+    AiOwner: "AiOwner",
+    ai_persona: "ai_persona",
+    ai2_mode: "ai2_mode",
+    onlypc: "onlypc",
+    onlygc: "onlygc",
+    AliveMsg: "AliveMsg"
 };
 
 for (const [globalKey, dbKey] of Object.entries(dbMap)) {
@@ -93,8 +97,7 @@ for (const [globalKey, dbKey] of Object.entries(dbMap)) {
     });
 }
 
-
-let version = '1.0.0'; // Defult to 1
+let version = '1.0.0'; // Default to 1
 try {
     const versionPath = path.join(__dirname, '..', 'lib', 'Default', 'Verselor-Version.json');
     if (fs.existsSync(versionPath)) {
@@ -105,9 +108,8 @@ try {
     console.error(chalk.red('Failed to load version file: ' + e.message));
 }
 
-
-global.version = version
-global.footer = footer
+global.version = version;
+global.footer = footer;
 global.owner =['2348137256404', '2348166546725'];
 
 const dbMess = global.db?.data?.settings?.mess || {};
@@ -141,12 +143,10 @@ global.mess = {
        badmin: `*ACCESS DENIED*\n\nBot is not yet admin, to use this feature make the bot an admin\n\n${footer}`,
        premium: `*ACCESS DENIED*\n\nOnly premium users can access this feature\n\n${footer}`,
    }
-}
+};
 
-let file = require.resolve(__filename)
-fs.watchFile(file, () => {
-    fs.unwatchFile(file)
-    console.log(chalk.redBright(`Update ${__filename}`))
-    delete require.cache[file]
-    require(file)
+fs.watchFile(__filename, async () => {
+    fs.unwatchFile(__filename);
+    console.log(chalk.redBright(`Update ${__filename}`));
+    await import(`${import.meta.url}?update=${Date.now()}`);
 });

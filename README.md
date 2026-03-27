@@ -379,11 +379,15 @@ npm start
 
 ### License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the **Custom / Heavstal Tech™ End User License Agreement (EULA)**.
+
+Please see [LICENSE](https://github.com/HeavstalTech/Verselor-V1/blob/main/LICENSE) for further information (Essential)
 
 ### Copyright Notice:
 
-You may obtain a copy of this file by any means, most part of this file is open source any you may copy this parts for personal use but you must give credit to **Heavstal Tech** but trying to de-obfuscated the obfuscated part of this file, re-brand or do any unauthorized activity with this file is strictly prohibited and may lead to legal issues.
+You may acquire any open-source part of this WhatsApp Automation Bot for free. By acquiring an open-source copy of this bot, you are by default bound to the Copyright Notice of this project, which strictly states that you must give proper credit to **Heavstal Tech™**. 
+
+Large parts of this WhatsApp Bot may have been obfuscated as an "Anti-Kanging" (protecting credits) protocol or for the protection of private API Keys and scrapers. Attempting to de-obfuscate any obfuscated part of this codebase is strictly prohibited and may lead to legal consequences under the jurisdiction of the Federal Republic of Nigeria.
 
 ---
 ### Chronicles Of Mr. Promise

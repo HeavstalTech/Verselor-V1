@@ -8,10 +8,9 @@ const addFilter = (from) => {
     setTimeout(() => usedCommandRecently.delete(from), 2000)
 }
 
-module.exports = { 
-    antiSpam: {
+const antiSpam = {
     isFiltered,
-    addFilter
+    addFilter,
 }
 
-}
+export default antiSpam

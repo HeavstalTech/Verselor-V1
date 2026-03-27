@@ -6,27 +6,31 @@
   "engines": {
     "node": ">=20.16.0"
   },
-  "type": "commonjs",
+  "type": "module",
+  "imports": {
+    "#*": "./*"
+  },
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "Commonjs"],
+  "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "ECMAScript Module", "ESM"],
   "author": "HEAVSTAL TECH",
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@hapi/boom": "^10.0.0",
-    "@heavstaltech/baileys": "^4.2.0",
+    "@heavstaltech/baileys": "^4.3.1",
     "@heavstaltech/api": "^1.3.7",
-    "chalk": "^4.1.2",
+    "chalk": "^5.6.2",
     "qrcode-terminal": "^0.12.0",
-    "cheerio": "^1.0.0-rc.10",
+    "cheerio": "^1.2.0",
     "google-it": "^1.6.4",
     "node-cache": "^5.1.2",
-    "file-type": "^16.5.3",
+    "file-type": "^21.3.4",
     "human-readable": "^0.2.1",
+    "performance-now": "^2.1.0",
     "node-webpmux": "^3.1.1",
-    "pino": "^8.14.1",
-    "steno": "^4.0.2",
+    "pino": "^10.3.1",
+    "lowdb": "^7.0.1",
     "api-dylux": "^1.4.4",
     "btch-downloader": "^2.8.4"
   },

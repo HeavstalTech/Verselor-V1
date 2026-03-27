@@ -1,19 +1,21 @@
-const chalk = require('chalk')
+import chalk from 'chalk';
 
-const color = (text, color) => {
-    return !color ? chalk.green(text) : chalk.keyword(color)(text)
-}
+const color = (text, colorName) => {
+    return !colorName ? chalk.green(text) : (chalk[colorName] ? chalk[colorName](text) : chalk.green(text));
+};
 
-const bgcolor = (text, bgcolor) => {
-	return !bgcolor ? chalk.green(text) : chalk.bgKeyword(bgcolor)(text)
-}
+const bgcolor = (text, bgcolorName) => {
+    return !bgcolorName ? chalk.green(text) : (chalk[bgcolorName] ? chalk[bgcolorName](text) : chalk.green(text));
+};
 
-const Lognyong = (text, color) => {
-	return !color ? chalk.yellow('[ ! ] ') + chalk.green(text) : chalk.yellow('=> ') + chalk.keyword(color)(text)
-}
+const Lognyong = (text, colorName) => {
+    return !colorName 
+        ? chalk.yellow('[ ! ] ') + chalk.green(text) 
+        : chalk.yellow('=> ') + (chalk[colorName] ? chalk[colorName](text) : chalk.green(text));
+};
 
-module.exports = {
-	color,
-	bgcolor,
-	Lognyong
-}
+export {
+    color,
+    bgcolor,
+    Lognyong
+};

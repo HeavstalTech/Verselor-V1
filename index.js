@@ -1,9 +1,14 @@
 // index.js
 // © HEAVSTAL TECH
-const { fork } = require('child_process');
-const path = require('path');
-const http = require('http');
-const fs = require('fs');
+import { fork } from 'node:child_process';
+import path from 'node:path';
+import http from 'node:http';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+// import "#settings/config.js" // no longer needed
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const major = parseInt(process.versions.node.split('.')[0], 10);
 if (major < 20) {
@@ -131,7 +136,7 @@ if (isCloud) {
             });
         } 
         
-        // --- RENTBOT API ENDPOINTS ---
+        // RENTBOT API ENDPOINTS
         else if (req.method === 'GET' && req.url === '/api/rentbot/list') {
             const pairingDir = path.join(__dirname, 'Connection', 'pairing');
             let users =[];
@@ -164,7 +169,6 @@ if (isCloud) {
             res.writeHead(200, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ success: true }));
         }
-        // -----------------------------
 
         // Config API (GET)
         else if (req.method === 'GET' && req.url === '/api/config') {
@@ -250,9 +254,9 @@ const CHILD_PATH = path.join(__dirname, 'Connection', 'start.js');
 
 function startBot() {
     console.log('[SYSTEM] Forking child process...');
-    child = fork(CHILD_PATH,[], {
+    child = fork(CHILD_PATH, [], {
         cwd: __dirname,
-        stdio: ['inherit', 'inherit', 'inherit', 'ipc'], 
+        stdio:['inherit', 'inherit', 'inherit', 'ipc'], 
         env: process.env
     });
 
