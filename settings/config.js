@@ -1,8 +1,8 @@
 // settings/config.js
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 import chalk from 'chalk';
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const footer = `> \`© A Product Of Heavstal Tech™\``;
@@ -102,7 +102,7 @@ try {
     const versionPath = path.join(__dirname, '..', 'lib', 'Default', 'Verselor-Version.json');
     if (fs.existsSync(versionPath)) {
         const vData = JSON.parse(fs.readFileSync(versionPath, 'utf-8'));
-        if (Array.isArray(vData)) version = vData.join('.');
+        if (vData && vData.version) version = vData.version;
     }
 } catch (e) {
     console.error(chalk.red('Failed to load version file: ' + e.message));

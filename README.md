@@ -54,7 +54,7 @@
  
 **┣ Name:** _Verselor V1_<br>
 **┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, Multi-Tenant & Multilingual WhatsApp bot, built by Heavstal Tech. 2026_<br>
-**┣ Version:** _1.0.0 (V1 - Latest)_<br>
+**┣ Version:** _1.0.1-beta.1 (v1-beta - Latest)_<br>
 **┣ Maintained:**  _[ YES ]_<br>
 **┣ Developer:** _HEAVSTAL TECH_<br>
 **┣ Language:** _English(en - Default)<br>
@@ -87,7 +87,7 @@
 ### NOTABLE FEATURES 
 
 1. **➭ pair || connect (Multi-Tenancy):** 
-    While 99.8% of WhatsApp Bots out there only grants a "one user - one instance" system, Verselor V1 has taken a wild turn with a "pair/connect" command which grants it it's "Multi-Tenant Feature - General Spoken Of As Verselor V1’s most unique & advanced command, this command allows a user to connect multiple users to the bot, each with their own instance of the bot, all managed under one server, single process & one cluster - all happening flawlessly.
+    While many WhatsApp Bots out there only grants a "one user - one instance" system, Verselor V1 has taken a wild turn with a "pair/connect" command which grants it it's "Multi-Tenant Feature - General Spoken Of As Verselor V1’s most unique & advanced command, this command allows a user to connect multiple users to the bot, each with their own instance of the bot, all managed under one server, single process & one cluster - all happening flawlessly.
 
 2. **➭ verselor || botai (AI Advancement):** 
     One of Verselor V1’s most notable command is the *verselor/bot-ai/boatai/bai* command, categorized as Verselor V1’s most "smartest" feature - known for it's expertise on the verselor-v1 bot and it's ability to run 99% of the commands available in the verselor-v1 WhatsApp automation bot, it's remains forever useful to users who finds it hard to manually run commands like "ping", "menu", or "repo" as they can easily just ask the verselor v1 ai to run command for them.

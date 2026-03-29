@@ -1,6 +1,6 @@
 {
   "name": "Verselor-V1",
-  "version": "1.0.0",
+  "version": "1.0.1-beta.1",
   "description": "A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, Multi-Tenant & Multilingual WhatsApp bot, built by Heavstal Tech. 2026",
   "main": "Connection/start.js",
   "engines": {
@@ -27,7 +27,6 @@
     "node-cache": "^5.1.2",
     "file-type": "^21.3.4",
     "human-readable": "^0.2.1",
-    "performance-now": "^2.1.0",
     "node-webpmux": "^3.1.1",
     "pino": "^10.3.1",
     "lowdb": "^7.0.1",
