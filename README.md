@@ -53,7 +53,7 @@
 ## BOT INFO
  
 **┣ Name:** _Verselor V1_<br>
-**┣ Description:** _A Powerful, Lightweight, Multi-Device, Multifunctional, Multi-Purpose, Multi-Tenant & Multilingual WhatsApp bot, built by Heavstal Tech. 2026_<br>
+**┣ Description:** _A highly scalable and feature-rich WhatsApp assistant by Heavstal Tech. Verselor V1 supports cross-device connectivity, shared user hosting, and global language translation, offering a complete suite of tools for chat moderation, media processing, and interactive entertainment._<br>
 **┣ Version:** _1.0.1-beta.1 (v1-beta - Latest)_<br>
 **┣ Maintained:**  _[ YES ]_<br>
 **┣ Developer:** _HEAVSTAL TECH_<br>
