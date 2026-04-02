@@ -119,7 +119,7 @@ global.mess = {
    success: dbMess.success || `Done!\n\n${footer}`,
    on: dbMess.on || `Bot is online\n\n${footer}`, 
    owner: dbMess.owner || `*ACCESS DENIED*\n\nOnly owner and sudo users can access this command\n\n${footer}`,
-   prem: dbMess.prem || `*ACCESS DENIED*\n\nPremium users only\n\n${footer}`, 
+   prem: `*ACCESS DENIED*\n\nPremium users only\n\nWanna Become A Premium User? type *${prefix}premium* to get started\n\n${footer}`, 
    deployer: `*ACCESS DENIED*\n\nThis command can only be accessed by the actual Deployer to prevent server conflicts.\n\nIf you want full access to the bot, type *${global.prefix}repo* to get information on how to deploy your own instance.\n\n${footer}`,
    off: dbMess.off || `Bot is now offline\n\n${footer}`,
    nsfw: `*ACCESS DENIED*\n\n*NSFW* has not been activated in this chat, use \`${global.prefix}nsfw on\` to activate it\n\n*Note/Disclaimer:* Activating *NSFW* will open access to age restricted contents & it also increases the chances of getting banned, WhatsApp *explicitly* does not support age restricted contents\n\n${footer}`,

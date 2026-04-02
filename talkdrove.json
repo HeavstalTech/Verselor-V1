@@ -56,11 +56,6 @@
       "value": "2348137256404,2348166546725",
       "required": false
     },
-    "PREMIUM": {
-      "description": "List of premium users (comma separated)",
-      "value": "2348137256404,2348166546725",
-      "required": false
-    },
     "SUDO": {
       "description": "List of sudo users (comma separated)",
       "value": "2348137256404,2348166546725",
