@@ -1,0 +1,26 @@
+HEAVSTAL TECH™ END USER LICENSE AGREEMENT (EULA)
+Copyright (c) 2026 Heavstal Tech™
+
+IMPORTANT — READ CAREFULLY: This End User License Agreement ("Agreement") is a legal agreement between you (either an individual or a single entity) and Heavstal Tech™ for the Heavstal Tech WhatsApp Automation Bot software ("Software").
+
+1. GRANT OF LICENSE
+Heavstal Tech™ grants you a limited, non-exclusive, non-transferable, and revocable right to acquire, download, and use the open-source components of this Software for personal or non-commercial use, strictly subject to the terms and conditions outlined below.
+
+2. MANDATORY ATTRIBUTION (ANTI-KANGING)
+By acquiring, copying, or distributing any open-source part of this Software, you are by default bound to this Agreement. You must prominently display and give full credit to "Heavstal Tech™" in all public deployments, forks, or modifications of this Software. Renaming the bot to claim original authorship ("kanging") is strictly prohibited.
+
+3. PROHIBITION ON DE-OBFUSCATION & REVERSE ENGINEERING
+Large parts of this Software may have been obfuscated as an "Anti-Kanging" protocol or for the strict protection of private API Keys, premium scrapers, and proprietary system core files. 
+Under this Agreement, you are STRICTLY PROHIBITED from:
+  a) Attempting to de-obfuscate, reverse engineer, decompile, or decrypt any obfuscated file.
+  b) Extracting, stealing, or reusing any private API keys embedded within the obfuscated code.
+  c) Modifying license verification checkers or premium status validators.
+
+4. TERMINATION
+This Agreement is effective until terminated. Your rights under this License will terminate automatically and immediately without notice from Heavstal Tech™ if you fail to comply with any provision of this Agreement (including attempting to de-obfuscate code or remove credits). Upon termination, you must destroy all copies of the Software in your possession.
+
+5. DISCLAIMER OF WARRANTY AND LIABILITY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. IN NO EVENT SHALL HEAVSTAL TECH™ BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, INCLUDING BUT NOT LIMITED TO WHATSAPP ACCOUNT BANS, DATA LOSS, OR SERVER CRASHES ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+6. GOVERNING LAW AND JURISDICTION
+This Agreement and any dispute or claim arising out of or in connection with it shall be governed by and construed in accordance with the laws of the Federal Republic of Nigeria. Any legal action, prosecution, or proceeding regarding the unauthorized distribution, de-obfuscation, or theft of this Software shall be instituted in the courts within the jurisdiction of Nigeria.
