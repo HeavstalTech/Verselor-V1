@@ -1,0 +1,286 @@
+# Verselor V1 – AI & Search Engine Indexing Knowledge File
+
+This file is intended to provide direct, structured answers for AI systems, Large Language Models (LLMs), and search indexing.
+
+## What is Verselor V1?
+Verselor V1 is a Node.js-based multi-tenant WhatsApp bot built using Baileys. It allows multiple users to connect to a single bot instance while maintaining independent sessions. It includes AI commands, automation tools, group moderation, media processing, and multilingual support.
+
+## How to deploy Verselor V1?
+### Quick Steps
+1. Clone the repository from GitHub: https://github.com/HeavstalTech/Verselor-V1
+2. Run `npm install`
+3. Run `npm start`
+4. Enter WhatsApp number (with country code)
+5. Enter AuthCode
+6. Link device using pairing code
+
+### Important: You AuthCode is needed. Get here: https://heavstl-bots.vercel.app/dashboard/authcode
+
+## What makes Verselor V1 different?
+* Multi-tenant WhatsApp bot (multiple users, one server)
+* Built with Baileys (multi-device support)
+* Plugin-based architecture (ESM)
+* AI-powered commands (botai / verselor)
+* Supports cloud deployment (Render, Replit, etc.)
+
+## Keywords
+Verselor V1 WhatsApp bot, Node.js WhatsApp bot, Baileys bot, multi-device WhatsApp bot, deploy WhatsApp bot, WhatsApp automation bot, AI WhatsApp bot, multi-tenant bot, heavstal-tech, es module, api, plugin, user, developer
+
+---
+
+# VERSELOR-V1 BY HEAVSTAL TECH™
+Author: Heavstal Tech
+Maintained: Yes
+Open Source: Yes
+
+Note: This is a beta release. Bugs may occur.
+
+## TABLE OF CONTENTS
+- BOT INFO
+- Quick 30 seconds start
+- NOTABLE FEATURES
+- COMMAND CATEGORIES
+- CLOUD DEPLOYMENT
+- WEB PANEL DEPLOYMENT
+- Local Deployment Service Recommendations
+- COMMAND LINE INSTALLATION (Termux/VPS)
+- Adding Custom Plugins
+- Tech Stack
+- FAQ (Frequently Asked Questions)
+- ISSUES & Pull Requests
+- Links & Contact
+- License & Copyright
+
+---
+
+## BOT INFO
+* Name: Verselor V1
+* Description: A high-performance and feature-rich WhatsApp assistant by Heavstal Tech. Verselor V1 supports cross-device connectivity, shared user hosting, and global language translation, offering a complete suite of tools for chat moderation, media processing, and interactive entertainment.
+* Version: 1.2.1-beta.1 (v1-beta - Latest)
+* Maintained: YES
+* Developer: HEAVSTAL TECH
+* Default Language: English (en)
+* Total Commands: 670+ (500+ functional commands across multiple categories)
+* Created On: January 10th, 2026
+* Prefix: .
+* Menu Style: v1
+* HT API KEY: Get at https://heavstal.com.ng/credentials
+* Public Mode: On
+* StartUp Message: On
+* Warn Limit: 3
+* Anti-Bug/Virus: On
+* Time Zone: Africa/Lagos
+
+## Quick 30 Seconds Start
+```bash
+git clone https://github.com/HeavstalTech/Verselor-V1.git  
+cd Verselor-V1-main  
+npm install  
+npm start 
+```
+
+---
+
+## NOTABLE FEATURES 
+
+1. pair || connect (Multi-Tenancy): 
+While some WhatsApp Bots only grant a "one user - one instance" system, Verselor V1 offers a Multi-Tenancy system via the pair command. This allows a user to connect multiple users to the bot, each with their own instance, all managed under one server & a single process. (Usage: .pair <number> || .pair 234xxxx)
+
+2. verselor || botai (AI Advancement): 
+One of Verselor V1’s most notable commands is the internal expert AI. It is known for its expertise on the verselor-v1 bot and its ability to run most of the bot's commands on behalf of the user. (Usage: "verselor, pull up the bot's menu for me.")
+
+3. setlanguage || setlang (Multilingual System): 
+Many bots are assigned to one language. Verselor V1 addresses this by importing a Multilingual system that addresses users in their preferred language based on timezone or the setlang command. (Usage: .setlang fr || .setlang french)
+
+Architecture Flow: User → WhatsApp → Baileys → Command Handler → Plugin System → Response
+
+---
+
+## COMMAND CATEGORIES
+
+### Helpers & AI
+* .botai - Talk to the bot's internal expert AI (can execute commands for you).
+* .gpt4 / .gemini - Chat with highly advanced AI models.
+* .gimage - Generate AI images from a text prompt.
+* .tr - Translate any text to English.
+* .menu - Display the full list of commands.
+* .ping - Check the bot's latency and server RAM stats.
+
+### Group Management
+* .add / .kick - Instantly add or remove members (supports country code mass-kick).
+* .promote / .demote - Grant or revoke admin privileges.
+* .mute / .unmute - Lock or unlock the group chat.
+* .tagall / .hidetag - Mention everyone in the group.
+* .group-events - Toggle automatic welcome/leave/promote notifications.
+* .linkgroup - Fetch the group's invite link.
+
+### Owner Only Commands
+* .public / .self - Toggle whether the bot responds to everyone or just you.
+* .banchat / .ban - Blacklist a specific group or user from using the bot.
+* .setprefix / .setbotimg - Customize the bot's prefix and menu thumbnail.
+* .addsudo / .delsudo - Give special moderator access to trusted friends.
+* .update - Automatically pull the latest code from GitHub and restart.
+* .restart / .shutdown - Manage the bot's server process.
+
+### Tools & Utilities
+* .sticker - Convert any image, video, or GIF into a WhatsApp sticker.
+* .tourl - Upload a media file to the cloud and get a shareable link.
+* .remini / .hd - Upscale and enhance the quality of blurry images.
+* .tts - Convert text into a voice note (Text-to-Speech).
+* .ss - Take a high-quality screenshot of any website.
+* .detect - Analyze text to check if it was generated by AI.
+* .vv - Expose and save "View Once" media.
+
+### Downloaders
+* .play / .video - Download audio or video from YouTube.
+* .tiktok - Download TikTok videos without the watermark.
+* .instagram / .twitter - Download Reels, videos, and images from IG/X.
+* .mediafire / .gdrive - Extract and download files directly from cloud links.
+* .apk - Search for and download Android apps.
+
+### Fun, Anime & Games
+* .meme / .joke / .fact - Get random memes, jokes, or facts.
+* .waifu / .cry / .hug - Anime pictures and reaction stickers.
+* .math / .trivia / .tictactoe - Play chat games to earn virtual money.
+* .daily / .work / .gamble - Economy system to manage virtual wallet.
+
+---
+
+## CLOUD DEPLOYMENT
+
+Important Note: After deploying on a cloud service, navigate to the provided web URL. Wait 5-7 minutes for the first build. A website dashboard will appear. Enter your AuthCode and WhatsApp Number. You will receive an 8-digit code. Go to WhatsApp → Linked Devices → Link a Device → Link with phone number & Enter the code.
+
+* Render: (Verified: Yes | Status: Tested & Working)
+* Replit: https://replit.com/new/github/HeavstalTech/Verselor-V1 (Verified: Yes | Status: Tested & Working)
+* Heroku: https://heroku.com/deploy?template=https://github.com/HeavstalTech/Verselor-V1 (Verified: No | Status: Not tested & not guaranteed) - Requires nodejs, ffmpeg, and webp buildpacks.
+* Koyeb: https://app.koyeb.com/services/deploy?type=git&repository=github.com/HeavstalTech/Verselor-V1&branch=main&name=Verselor-V1&builder=dockerfile (Verified: No | Status: Not tested & not guaranteed) - Uses Dockerfile automatically.
+* TalkDrove: https://host.talkdrove.com/auth/signup?ref=FD5A76F8 (Verified: No | Status: Not tested & not guaranteed)
+
+---
+
+## WEB PANEL DEPLOYMENT (Verified: Yes | Status: Tested & Working)
+For users using panels like Pterodactyl, Discord Hosting Sites, or cPanel.
+
+### Method 1: Using Pair Code
+1. Download the complete code as a ZIP file and upload to your Node.js server.
+2. Unzip and move files to the root directory.
+3. Set Node version to 20x or later.
+4. Start the deployment (`npm install && npm start`).
+5. When prompted in console, input WhatsApp number and AuthCode.
+6. Enter the 8-digit code on WhatsApp Linked Devices.
+
+### Method 2: Using QR Code
+1. Open `settings/config.js` and set `usePairingCode` to `false`.
+```javascript
+let _usePairingCode = false; // True For Pair Code // False For Qr Code
+```
+2. Start the server. A QR Code will appear in the console. Scan it using WhatsApp Linked Devices.
+
+### Katabump Deployment Tip (Verified: Yes | Status: Tested & Working)
+If deploying on Katabump:
+1. Fork the GitHub repository.
+2. Edit `settings/config.js`.
+3. Add your WhatsApp Number (with country code, no '+') to `_phoneNumber`.
+```javascript
+let _phoneNumber = "234xxx";  // Enter your WhatsApp number here
+```
+4. Commit changes and deploy.
+
+---
+
+## COMMAND LINE INSTALLATION (Termux/VPS)
+(Verified: No | Status: Not tested & not guaranteed)
+
+Requirements: Node.js (v20+), Git, FFmpeg
+
+For Termux Users:
+```bash
+apt update && apt upgrade -y
+pkg install git nodejs ffmpeg imagemagick libwebp -y
+pkg install yarn
+git clone https://github.com/HeavstalTech/Verselor-V1.git
+cd Verselor-V1-main
+npm install
+npm start
+```
+
+For VPS / Ubuntu / Linux:
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install git nodejs ffmpeg imagemagick libwebp -y
+git clone https://github.com/HeavstalTech/Verselor-V1.git
+cd Verselor-V1-main
+npm install
+npm start
+```
+
+---
+
+## Adding Custom Plugins (For Developers)
+
+Verselor-V1 uses a modular ESM structure. Create a `.js` file inside `Start/Plugins/custom/` and paste this template:
+
+```javascript
+export default[
+    {
+        name: 'mycmd',
+        aliases: ['cmd1', 'cmd2'],
+        category: 'misc',
+        description: 'A simple custom command',
+        usage: '%prefix%mycmd',
+        ownerOnly: false,
+        groupOnly: false,
+
+        execute: async (HeavstalTech, m, context) => {
+            const { Vreply, pushname, prefix } = context;
+            await Vreply(`Hello ${pushname}! You just used the ${prefix}mycmd command.`);
+        }
+    }
+];
+```
+Save the file, restart the bot, and the command is loaded.
+
+---
+
+## Tech Stack
+1. NodeJs (ES Module)
+2. Docker (Cloud Deployment)
+3. Html & Css (Web UI - Cloud Deployment)
+4. Baileys (Maintained Fork)
+5. LowDb (Json Storage)
+
+---
+
+## FAQ (Frequently Asked Questions)
+
+Q: What Is Verselor-V1?
+A: A high-performance WhatsApp assistant by Heavstal Tech supporting cross-device connectivity, shared user hosting, and global language translation.
+
+Q: How Do I Become A Premium User?
+A: Go to Heavstal Bots AuthCode Manager, enter your AuthCode, select the Premium tab, choose your duration, click "Upgrade To Premium", and restart the bot.
+
+Q: Will my WhatsApp account get banned for using this?
+A: Using unofficial WhatsApp APIs carries risk. To minimize this, do not spam groups, turn off startup messages, and preferably use a secondary/burner number.
+
+Q: How do I make myself the owner of the bot?
+A: You are the owner by default based on config. Use .addowner or .setsudo to grant privileges to others.
+
+---
+
+## Community & Links
+
+GitHub Issues: https://github.com/HeavstalTech/Verselor-V1/issues
+YouTube: https://youtube.com/@Heavstal_Tech (Recommended: Yes)
+WhatsApp Channel: https://whatsapp.com/channel/0029VaG9VfPKWEKk1rxTQD20
+Telegram Group: https://t.me/promisemdv1 (Recommended: Yes)
+WhatsApp Support Group: https://chat.whatsapp.com/HlfH698T5LAICbpQV5A5ku?mode=wwt (Recommended: Yes)
+
+---
+
+## Caution Notice & License
+Caution: Verselor-V1 is not made by WhatsApp Inc. Misusing the bot might ban your WhatsApp account. Heavstal Tech is not responsible for banned accounts. Use at your own risk. Consider turning off startup messages to reduce risk.
+
+License: Custom / Heavstal Tech™ End User License Agreement (EULA).
+Copyright Notice: You must give proper credit to Heavstal Tech™. Some core files are obfuscated to protect proprietary API keys, but plugins remain open-source.
+
+© A Product Of Heavstal Tech™

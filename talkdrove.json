@@ -1,0 +1,179 @@
+{
+  "name": "VERSELOR-V1",
+  "description": "A high-performance and feature-rich WhatsApp assistant by Heavstal Tech. Verselor V1 supports cross-device connectivity, shared user hosting, and global language translation, offering a complete suite of tools for chat moderation, media processing, and interactive entertainment. Built by Heavstal Tech - 2026",
+  "logo": "https://bots.heavstal.com.ng/bot-images/verselor-img-one.png",
+  "keywords":[
+    "heavstal-tech",
+    "baileys",
+    "multi-device",
+    "Heavstal Tech",
+    "WhatsApp",
+    "Verselor V1",
+    "2026",
+    "Nodejs",
+    "bot",
+    "WhatsApp bot",
+    "WhatsApp automation",
+    "ECMAScript Module", 
+    "ESM"
+  ],
+  "documentation-link": "https://bots.heavstal.com.ng/docs/verselor-v1",
+  "owner-verification": "heavstaltech@gmail.com",
+  "env": {
+    "USE_PAIR_CODE": {
+      "description": "type `true` to get pair code and `false` to get qr code",
+      "value": "true",
+      "required": true
+    },
+    "WHATSAPP_NUMBER": {
+      "description": "Your WhatsApp number in international format (the one the bot will be pairing to)",
+      "value": "234XXXXXXXXXX",
+      "required": true
+    },
+    "AUTH_CODE": {
+      "description": "Enter Your Authentication Code Here. To Get One visit: https://bots.heavstal.com.ng/authcode",
+      "value": "",
+      "required": true
+    },
+    "PREFIX": {
+      "description": "Bot command prefix (e.g ., !, #)",
+      "value": ".",
+      "required": true
+    },
+    "HT_API_KEY": {
+      "description": "Enter your `HEAVSTAL TECH API KEY` here (required for many commands). Get api key at: https://heavstal.com.ng/credentials",
+      "value": "",
+      "required": false
+    },
+    "MONGODB_URI": {
+      "description": "Enter your monogose (mongoDB) uri here",
+      "value": "",
+      "required": false
+    },
+    "OWNERS": {
+      "description": "List of owner numbers (comma separated, no spaces)",
+      "value": "2348137256404,2348166546725",
+      "required": false
+    },
+    "SUDO": {
+      "description": "List of sudo users (comma separated)",
+      "value": "2348137256404,2348166546725",
+      "required": false
+    },
+    "ANTICALL": {
+      "description": "Anticall mode: off, reject, or block",
+      "value": "off",
+      "required": false
+    },
+    "TIMEZONE": {
+      "description": "Bot's timezone",
+      "value": "Africa/Lagos",
+      "required": false
+    },
+    "MENU_STYLE": {
+      "description": "Visual layout style of the main menu (v1, v2, v3)",
+      "value": "v1",
+      "required": false
+    },
+    "THUMBNAIL": {
+      "description": "Image URL to be used as thumbnail",
+      "value": "https://files.catbox.moe/g8pxls.png",
+      "required": false
+    },
+    "PUBLIC_MODE": {
+      "description": "Set to true to make the bot respond to everyone, false for private mode only",
+      "value": "true",
+      "required": false
+    },
+    "SLEEP_MODE": {
+      "description": "Set to true to put bot in sleep mode",
+      "value": "false",
+      "required": false
+    },
+    "ONLY_PRIVATE": {
+      "description": "Set to true to restrict bot strictly to private chats",
+      "value": "false",
+      "required": false
+    },
+    "ONLY_GROUP": {
+      "description": "Set to true to restrict bot strictly to group chats",
+      "value": "false",
+      "required": false
+    },
+    "STARTUP_MESSAGE": {
+      "description": "Set to true to send startup message on boot",
+      "value": "true",
+      "required": false
+    },
+    "AUTO_REACT": {
+      "description": "Set to true to auto react to incoming messages",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_RECORD": {
+      "description": "Set to true to simulate voice recording presence",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_TYPING": {
+      "description": "Set to true to simulate typing presence",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_RECORD_TYPE": {
+      "description": "Set to true to alternate typing and recording presences",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_READ": {
+      "description": "Set to true to automatically mark messages as read",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_BIO": {
+      "description": "Set to true to auto update WhatsApp bio",
+      "value": "false",
+      "required": false
+    },
+    "AUTO_VIEW_STATUS": {
+      "description": "Set to true to automatically view statuses/stories",
+      "value": "false",
+      "required": false
+    },
+    "LANGUAGE": {
+      "description": "Language code (e.g., en, fr, auto)",
+      "value": "en",
+      "required": false
+    },
+    "WARN_LIMIT": {
+      "description": "Max warnings before a user is kicked",
+      "value": "3",
+      "required": false
+    },
+    "AI_NAME": {
+      "description": "Name for the bot's AI",
+      "value": "VERSELOR AI",
+      "required": false
+    },
+    "AI_OWNER": {
+      "description": "Name of the AI's Creator",
+      "value": "HEAVSTAL TECH",
+      "required": false
+    },
+    "AI_PERSONA": {
+      "description": "Base instructions and persona for the AI",
+      "value": "You are a helpful assistant named Verselor V1 created by Heavstal Tech. You answer questions concisely.",
+      "required": false
+    },
+    "AI2_MODE": {
+      "description": "Default personality mode for the secondary AI (e.g., neutral, sassy, fun)",
+      "value": "neutral",
+      "required": false
+    },
+    "ALIVE_MSG": {
+      "description": "Message to send when the 'alive' command is called",
+      "value": "*ʜᴇʟʟᴏ*\n\nVERSELOR V1 IS ALIVE",
+      "required": false
+    }
+  }
+}

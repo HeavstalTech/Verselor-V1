@@ -1,0 +1,46 @@
+{
+  "name": "Verselor-V1",
+  "version": "1.3.12-beta",
+  "description": "A high-performance and feature-rich WhatsApp assistant by Heavstal Tech. Verselor V1 supports cross-device connectivity, shared user hosting, and global language translation, offering a complete suite of tools for chat moderation, media processing, and interactive entertainment. Built by Heavstal Tech - 2026",
+  "main": "Connection/start.js",
+  "engines": {
+    "node": ">=20.16.0"
+  },
+  "type": "module",
+  "imports": {
+    "#*": "./*"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": ["heavstal-tech", "baileys", "multi-device", "Heavstal Tech", "WhatsApp", "Verselor V1", "2026", "Mr. Promise", "Nodejs", "bot", "WhatsApp bot", "WhatsApp automation", "ECMAScript Module", "ESM"],
+  "author": "HEAVSTAL TECH",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "@hapi/boom": "^10.0.0",
+    "@heavstaltech/baileys": "^4.4.1",
+    "@heavstaltech/api": "^1.3.10",
+    "chalk": "^5.6.2",
+    "qrcode-terminal": "^0.12.0",
+    "express": "^5.2.1",
+    "cheerio": "^1.2.0",
+    "google-it": "^1.6.4",
+    "node-cache": "^5.1.2",
+    "file-type": "^21.3.4",
+    "human-readable": "^0.2.1",
+    "node-webpmux": "^3.1.1",
+    "pino": "^10.3.1",
+    "lowdb": "^7.0.1",
+    "api-dylux": "^1.4.4",
+    "btch-downloader": "^2.8.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HeavstalTech/Verselor-V1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HeavstalTech/Verselor-V1/issues"
+  },
+  "homepage": "https://bots.heavstal.com.ng/docs/verselor-v1"  
+}

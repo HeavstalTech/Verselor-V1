@@ -1,0 +1,882 @@
+<!-- Connection/index.html -->
+<!-- © HEAVSTAL TECH™ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verselor V1 By Heavstal Tech | Control Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    
+    <div id="auth-overlay" class="auth-overlay">
+        <div class="auth-container">
+            <div class="auth-header">
+                <img src="https://bots.heavstal.com.ng/bot-images/verselor-img-one.png" alt="Logo" class="auth-logo">
+                <h2 id="auth-title">Security Check</h2>
+                <p id="auth-desc" class="text-muted">Connecting to server...</p>
+            </div>
+            
+            <div class="input-group" id="auth-input-group" style="display: none;">
+                <label>Dashboard Password</label>
+                <input type="password" id="auth-pass" class="form-control" placeholder="Enter Password" onkeypress="if(event.key === 'Enter') submitAuth()">
+            </div>
+            
+            <div id="auth-error" class="alert alert-danger" style="display: none;"></div>
+            
+            <button id="auth-btn" class="btn btn-primary btn-block" style="display: none; margin-top: 20px;" onclick="submitAuth()">Continue</button>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Header -->
+    <div class="mobile-header">
+        <button class="hamburger" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+        <div class="mobile-brand">VERSELOR V1</div>
+    </div>
+    
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <div class="app-wrapper">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <img src="https://bots.heavstal.com.ng/bot-images/verselor-img-one.png" alt="Logo">
+                <span>VERSELOR V1</span>
+            </div>
+            
+            <div class="sidebar-status">
+                <span id="status-badge" class="badge badge-waiting"><i class="fas fa-circle-notch fa-spin"></i> Connecting...</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-item active" onclick="switchTab('dashboard')">
+                    <i class="fas fa-th-large"></i> Dashboard
+                </div>
+                <div class="nav-item" onclick="switchTab('rentbot')">
+                    <i class="fas fa-server"></i> Pair User
+                </div>
+                <div class="nav-item" onclick="switchTab('messages')">
+                    <i class="fas fa-comment-dots"></i> Messages
+                </div>
+                <div class="nav-item" onclick="switchTab('config')">
+                    <i class="fas fa-cog"></i> Settings
+                </div>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <small class="text-muted">Powered by Heavstal Tech</small>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            
+            <section id="dashboard" class="tab-content active">
+                
+                <div class="page-header">
+                    <div>
+                        <h2>System Overview</h2>
+                        <p class="text-muted">Manage the core engine and deployment status.</p>
+                    </div>
+                    
+                    <div id="bot-controls" class="control-group" style="display: none;">
+                        <button id="btn-start" class="btn btn-success" onclick="controlBot('start')"><i class="fas fa-play"></i> Start</button>
+                        <button id="btn-restart" class="btn btn-primary" onclick="controlBot('restart')"><i class="fas fa-sync-alt"></i> Restart</button>
+                        <button id="btn-stop" class="btn btn-warning" onclick="controlBot('stop')"><i class="fas fa-stop"></i> Stop</button>
+                        <button id="btn-disconnect" class="btn btn-danger" onclick="controlBot('disconnect')"><i class="fas fa-power-off"></i> Disconnect</button>
+                    </div>
+                </div>
+
+                <div class="card" id="pair-container">
+                    <div class="card-header">
+                        <h3><i class="fas fa-link"></i> Link Device</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-muted" style="margin-bottom: 20px;">Deploy the host bot by providing a WhatsApp number and Authentication Code.</p>
+                        
+                        <div id="error-alert" class="alert alert-danger" style="display: none;"></div>
+
+                        <!-- Stacked vertically as requested -->
+                        <div id="phone-pairing" style="display: none;">
+                            <div class="input-group">
+                                <label>WhatsApp Number</label>
+                                <input type="text" id="phone" class="form-control" placeholder="e.g. 2348123456789" onkeyup="checkDeployForm()">
+                                <small class="text-muted">Include country code without '+'</small>
+                            </div>
+                            <div class="input-group" style="margin-top: 15px;">
+                                <label>Authentication Code</label>
+                                <input type="text" id="authcode" class="form-control" placeholder="Heavstal_Bots_..." onkeyup="checkDeployForm()">
+                                <small class="text-muted">Get yours <a href="https://bots.heavstal.com.ng/dashboard/authcode" target="_blank">here</a></small>
+                            </div>
+                            <button id="deploy-btn" class="btn btn-primary btn-block" onclick="deployBot()" disabled style="margin-top: 20px; padding: 12px; font-size: 16px;">Deploy Instance</button>
+                        </div>
+
+                        <div id="qr-pairing" style="display: none; text-align: center; padding: 30px 0;">
+                            <p class="text-muted" style="margin-bottom: 20px;">Scan the QR code below using your WhatsApp Linked Devices.</p>
+                            <img id="qr-image" src="" alt="Waiting for QR..." style="width: 250px; height: 250px; border-radius: 8px; border: 1px solid var(--border); display: none; margin: 0 auto;">
+                            <p id="qr-loading" style="margin-top: 15px;"><i class="fas fa-spinner fa-spin"></i> Generating QR Code...</p>
+                        </div>
+
+                        <div class="code-container" style="text-align: center; margin-top: 25px;">
+                            <div style="display: flex; justify-content: center; align-items: stretch; gap: 10px;">
+                                <div id="code-display" class="pairing-code" style="display:none; margin: 0;"></div>
+                                <button id="copy-code-btn" class="btn btn-primary" style="display:none; padding: 0 20px;" onclick="copyPairCode()">
+                                    <i class="fas fa-copy" style="font-size: 18px;"></i>
+                                </button>
+                            </div>
+                            <p id="status-msg" class="text-muted" style="margin-top: 10px; font-weight: 500;"></p>
+                        </div>
+                        
+                        <div class="terminal-container" id="terminal-box">
+                            <div class="terminal-line">Waiting for bot logs...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="active-dashboard" style="display: none;">
+                    <div class="status-banner" id="status-banner-ui">
+                        <div class="status-icon"><i id="engine-status-icon" class="fas fa-check-circle" style="color: var(--success);"></i></div>
+                        <div class="status-text">
+                            <h3 id="engine-status-title">Engine is Online & Running</h3>
+                            <p id="engine-status-desc" class="text-muted">Verselor V1 is securely connected to WhatsApp servers. Use the controls above to manage the process.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="margin-top: 25px;">
+                        <div class="card-header">
+                            <h3>Live Console Logs</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="terminal-container active-terminal" id="terminal-box-active">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="rentbot" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h2>Pair User (Multi-Tenancy)</h2>
+                        <p class="text-muted">Manage multiple independent bot sessions on this single server instance.</p>
+                    </div>
+                </div>
+
+                <div id="rentbot-offline" class="alert alert-warning" style="display: block;">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    <strong>Host Bot Offline:</strong> The main instance is not connected. Please deploy the host bot in the Dashboard tab first.
+                </div>
+                
+                <div id="rentbot-online" style="display: none;">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Add New Tenant</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row align-bottom">
+                                <div class="input-group flex-1">
+                                    <label>Target WhatsApp Number</label>
+                                    <input type="text" id="rent-phone" class="form-control" placeholder="e.g. 2348123456789">
+                                    <small class="text-muted">Enter the number you want to pair.</small>
+                                </div>
+                                <div class="input-group" style="margin-bottom: 22px;">
+                                    <button id="rent-btn" class="btn btn-primary" onclick="pairRentBot()">Request Code</button>
+                                </div>
+                            </div>
+                            
+                            <div style="text-align: center; margin-top: 20px;">
+                                <div id="rent-code-display" class="pairing-code" style="display:none; margin: 0 auto;"></div>
+                                <p id="rent-status" class="text-muted" style="margin-top: 10px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card" style="margin-top: 25px;">
+                        <div class="card-header">
+                            <h3>Active Paired Users</h3>
+                        </div>
+                        <div class="card-body">
+                            <div id="rentbot-list" class="tenant-list">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="messages" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h2>Bot Responses</h2>
+                        <p class="text-muted">Customize the text strings the bot replies with.</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="saveConfig()"><i class="fas fa-save"></i> Save Messages</button>
+                </div>
+                
+                <div class="alert alert-info" style="margin-bottom: 20px;">
+                    <i class="fas fa-info-circle"></i> <strong>Recommendation:</strong> It is highly recommended to leave these as default unless you want to completely rebrand the bot's tone.
+                </div>
+
+                <div class="settings-list" id="messages-grid">
+                </div>
+            </section>
+            
+            <section id="config" class="tab-content">
+                <div class="page-header">
+                    <div>
+                        <h2>Core Configuration</h2>
+                        <p class="text-muted">Modify global behavior and operational settings.</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="saveConfig()"><i class="fas fa-save"></i> Save Settings</button>
+                </div>
+                
+                <div class="settings-grid" id="settings-grid" style="margin-bottom: 30px;">
+                </div>
+
+                <div class="page-header" style="margin-top: 30px;">
+                    <div>
+                        <h2>Security</h2>
+                        <p class="text-muted">Update your web panel access password.</p>
+                    </div>
+                    <button class="btn btn-warning" onclick="changePassword()"><i class="fas fa-key"></i> Update Password</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div id="pw-alert" class="alert alert-info" style="display: none;"></div>
+                        <div class="form-row">
+                            <div class="input-group flex-1">
+                                <label>Current Password</label>
+                                <input type="password" id="old-pass" class="form-control" placeholder="Enter current password">
+                            </div>
+                            <div class="input-group flex-1">
+                                <label>New Password</label>
+                                <input type="password" id="new-pass" class="form-control" placeholder="Enter new password">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <div id="toast" class="toast">Action Successful!</div>
+
+    <script>
+        let currentConfig = {};
+        let isMainBotOnline = false;
+        let evtSource = null;
+        let authState = 'loading'; 
+
+        // Sidebar toggle for mobile
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
+            document.querySelector('.sidebar-overlay').classList.toggle('show');
+        }
+
+        async function checkAuth() {
+            try {
+                const res = await fetch('/api/auth/status');
+                const data = await res.json();
+                authState = data.status;
+                
+                const overlay = document.getElementById('auth-overlay');
+                const title = document.getElementById('auth-title');
+                const desc = document.getElementById('auth-desc');
+                const btn = document.getElementById('auth-btn');
+                const inputGrp = document.getElementById('auth-input-group');
+
+                if (authState === 'authenticated') {
+                    overlay.style.display = 'none';
+                    initDashboard();
+                } else if (authState === 'setup') {
+                    title.innerText = 'Create Password';
+                    desc.innerText = 'Set a one-time password to secure your Control Panel from unauthorized access.';
+                    btn.innerText = 'Set Password';
+                    inputGrp.style.display = 'block';
+                    btn.style.display = 'block';
+                } else if (authState === 'login') {
+                    title.innerText = 'Restricted Access';
+                    desc.innerText = 'Unrecognized IP Address. Please enter your dashboard password.';
+                    btn.innerText = 'Login';
+                    inputGrp.style.display = 'block';
+                    btn.style.display = 'block';
+                }
+            } catch (e) {
+                document.getElementById('auth-title').innerText = 'Network Error';
+                document.getElementById('auth-desc').innerText = 'Could not connect to the backend server. Retrying...';
+                setTimeout(checkAuth, 3000);
+            }
+        }
+
+        async function submitAuth() {
+            const pass = document.getElementById('auth-pass').value;
+            const errDiv = document.getElementById('auth-error');
+            const btn = document.getElementById('auth-btn');
+            
+            if (!pass) {
+                errDiv.innerText = "Password cannot be empty";
+                errDiv.style.display = "block";
+                return;
+            }
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            
+            const endpoint = authState === 'setup' ? '/api/auth/setup' : '/api/auth/login';
+            
+            try {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ password: pass })
+                });
+                const data = await res.json();
+                
+                if (res.ok && data.success) {
+                    errDiv.style.display = "none";
+                    document.getElementById('auth-overlay').style.display = 'none';
+                    initDashboard();
+                } else {
+                    errDiv.innerText = data.message || "Invalid credentials";
+                    errDiv.style.display = "block";
+                    btn.disabled = false;
+                    btn.innerText = authState === 'setup' ? 'Set Password' : 'Login';
+                }
+            } catch (e) {
+                errDiv.innerText = "Network error";
+                errDiv.style.display = "block";
+                btn.disabled = false;
+                btn.innerText = 'Try Again';
+            }
+        }
+
+        function initDashboard() {
+            fetchConfig();
+            fetchStatus();
+            setInterval(fetchStatus, 3000);
+            initSSE();
+        }
+
+        checkAuth();
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(t => t.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+            
+            if(window.innerWidth <= 768) {
+                toggleSidebar(); 
+            }
+            
+            if(tabId === 'rentbot') fetchRentBots();
+        }
+
+        async function fetchConfig() {
+            try {
+                const res = await fetch('/api/config');
+                currentConfig = await res.json();
+                buildConfigUI();
+                
+                if(currentConfig.usePairingCode) {
+                    document.getElementById('phone-pairing').style.display = 'block';
+                    document.getElementById('qr-pairing').style.display = 'none';
+                } else {
+                    document.getElementById('phone-pairing').style.display = 'none';
+                    document.getElementById('qr-pairing').style.display = 'block';
+                }
+
+                if (currentConfig.phoneNumber) document.getElementById('phone').value = currentConfig.phoneNumber;
+                if (currentConfig.AuthCode) document.getElementById('authcode').value = currentConfig.AuthCode;
+                checkDeployForm();
+
+            } catch (e) { console.error("Failed to fetch config", e); }
+        }
+
+        const schema =[
+            { key: 'usePairingCode', type: 'bool', label: 'Use Pair Code (Off = QR)' },
+            { key: 'publicX', type: 'bool', label: 'Public Mode' },
+            { key: 'startup', type: 'bool', label: 'Startup Messages' },
+            { key: 'autoRead', type: 'bool', label: 'Auto Read Messages' },
+            { key: 'autoTyping', type: 'bool', label: 'Auto Typing' },
+            { key: 'autoRecord', type: 'bool', label: 'Auto Recording' },
+            { key: 'autoViewStatus', type: 'bool', label: 'Auto View Status' },
+            { key: 'onlygroup', type: 'bool', label: 'Group Chat Only' },
+            { key: 'onlyprivate', type: 'bool', label: 'Private Chat Only' },
+            { key: 'sleep', type: 'bool', label: 'Sleep Mode' },
+            { key: 'prefix', type: 'text', label: 'Bot Prefix (e.g. . / !)' },
+            { key: 'timezone', type: 'text', label: 'Timezone (e.g. Africa/Lagos)' },
+            { key: 'HT_API_KEY', type: 'text', label: 'Heavstal API Key' },
+            { key: 'MONGODB_URI', type: 'text', label: 'MongoDB Connection URI' },
+            { key: 'AiName', type: 'text', label: 'AI Name' },
+            { key: 'ai_persona', type: 'text', label: 'AI Base Persona' },
+        ];
+
+        function buildConfigUI() {
+            const grid = document.getElementById('settings-grid');
+            const msgGrid = document.getElementById('messages-grid');
+            grid.innerHTML = ''; msgGrid.innerHTML = '';
+            
+            schema.forEach(item => {
+                const val = currentConfig[item.key] !== undefined ? currentConfig[item.key] : '';
+                let html = item.type === 'bool' ? `
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <span class="setting-label">${item.label}</span>
+                        </div>
+                        <label class="switch">
+                            <input type="checkbox" id="cfg_${item.key}" ${val ? 'checked' : ''}>
+                            <span class="slider"></span>
+                        </label>
+                    </div>` : `
+                    <div class="input-group">
+                        <label>${item.label}</label>
+                        <input type="text" class="form-control" id="cfg_${item.key}" value="${val}">
+                    </div>`;
+                grid.innerHTML += html;
+            });
+            
+            const msgKeys =['wait', 'success', 'owner', 'admin', 'group', 'nsfw'];
+            msgKeys.forEach(k => {
+                msgGrid.innerHTML += `
+                <div class="input-group" style="width: 100%;">
+                    <label>mess.${k}</label>
+                    <textarea class="form-control" id="msg_${k}" rows="2" style="resize: vertical;">${currentConfig.mess?.[k] || ''}</textarea>
+                </div>`;
+            });
+        }
+
+        async function saveConfig() {
+            const newConfig = { mess: {} };
+            schema.forEach(item => {
+                const el = document.getElementById('cfg_' + item.key);
+                newConfig[item.key] = item.type === 'bool' ? el.checked : el.value;
+            });
+            
+            ['wait', 'success', 'owner', 'admin', 'group', 'nsfw'].forEach(k => {
+                newConfig.mess[k] = document.getElementById('msg_' + k).value;
+            });
+            
+            try {
+                await fetch('/api/config', { 
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' }, 
+                    body: JSON.stringify(newConfig) 
+                });
+                showToast("Configuration Saved Successfully!");
+            } catch (e) { 
+                alert("Failed to save configuration."); 
+            }
+        }
+
+        async function changePassword() {
+            const oldPass = document.getElementById('old-pass').value;
+            const newPass = document.getElementById('new-pass').value;
+            const alertBox = document.getElementById('pw-alert');
+            
+            if (!oldPass || !newPass) {
+                alertBox.className = 'alert alert-danger';
+                alertBox.innerText = "Please fill in both fields.";
+                alertBox.style.display = 'block';
+                return;
+            }
+
+            try {
+                const res = await fetch('/api/auth/change', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ oldPassword: oldPass, newPassword: newPass })
+                });
+                const data = await res.json();
+                
+                if (data.success) {
+                    alertBox.className = 'alert alert-info';
+                    alertBox.innerText = "Password updated successfully.";
+                    alertBox.style.display = 'block';
+                    document.getElementById('old-pass').value = '';
+                    document.getElementById('new-pass').value = '';
+                } else {
+                    alertBox.className = 'alert alert-danger';
+                    alertBox.innerText = data.message || "Failed to update password.";
+                    alertBox.style.display = 'block';
+                }
+            } catch(e) {
+                alertBox.className = 'alert alert-danger';
+                alertBox.innerText = "Network error.";
+                alertBox.style.display = 'block';
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        function copyPairCode() {
+            const code = document.getElementById('code-display').innerText;
+            navigator.clipboard.writeText(code);
+            const btn = document.getElementById('copy-code-btn');
+            btn.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => btn.innerHTML = '<i class="fas fa-copy"></i>', 2000);
+        }
+
+        function checkDeployForm() {
+            const phone = document.getElementById('phone').value.trim();
+            const auth = document.getElementById('authcode').value.trim();
+            const btn = document.getElementById('deploy-btn');
+            if (phone && auth) { 
+                btn.disabled = false; 
+            } else { 
+                btn.disabled = true; 
+            }
+        }
+
+        async function deployBot() {
+            const phone = document.getElementById('phone').value.trim();
+            const authCode = document.getElementById('authcode').value.trim();
+            const btn = document.getElementById('deploy-btn');
+
+            if (!phone || !authCode) return;
+            
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            document.getElementById('error-alert').style.display = 'none';
+            document.getElementById('status-msg').innerText = "Starting deployment... Watch terminal for progress.";
+            
+            try {
+                await fetch('/api/pair', { 
+                    method: 'POST', 
+                    headers: { 'Content-Type': 'application/json' }, 
+                    body: JSON.stringify({ phone, authCode }) 
+                });
+            } catch (e) { 
+                alert("Server connection failed."); 
+                btn.disabled = false;
+                btn.innerHTML = 'Deploy Instance';
+            }
+        }
+
+        async function controlBot(action) {
+            if(action === 'disconnect') {
+                const confirmWipe = confirm("⚠️ ARE YOU SURE?\n\nThis will permanently kill the bot, delete your session data, and wipe your saved credentials. You will need to link a device again.");
+                if(!confirmWipe) return;
+
+                document.getElementById('phone').value = '';
+                document.getElementById('authcode').value = '';
+                document.getElementById('deploy-btn').disabled = true;
+            }
+
+            // Immediately apply local button restrictions to prevent spam clicks
+            const btnStart = document.getElementById('btn-start');
+            const btnRestart = document.getElementById('btn-restart');
+            const btnStop = document.getElementById('btn-stop');
+            const btnDisconnect = document.getElementById('btn-disconnect');
+            
+            if(action === 'start') {
+                btnStart.disabled = true;
+            } else if(action === 'stop') {
+                btnStop.disabled = true;
+            } else if(action === 'restart') {
+                btnStart.disabled = true;
+                btnRestart.disabled = true;
+                btnStop.disabled = true;
+                btnDisconnect.disabled = true;
+            } else if(action === 'disconnect') {
+                document.getElementById('bot-controls').style.display = 'none';
+            }
+
+            try {
+                await fetch(`/api/control/${action}`, { method: 'POST' });
+                fetchStatus(); 
+            } catch (e) {
+                alert(`Failed to send ${action} command to server.`);
+                fetchStatus(); 
+            }
+        }
+
+        async function fetchRentBots() {
+            try {
+                const res = await fetch('/api/rentbot/list');
+                const data = await res.json();
+                const listDiv = document.getElementById('rentbot-list');
+                listDiv.innerHTML = '';
+                
+                if(data.users.length === 0) {
+                    listDiv.innerHTML = '<div class="empty-state">No paired/connected users found in the database.</div>';
+                    return;
+                }
+
+                data.users.forEach(phone => {
+                    listDiv.innerHTML += `
+                        <div class="tenant-item">
+                            <div class="tenant-details">
+                                <i class="fas fa-user-circle"></i>
+                                <span>+${phone}</span>
+                            </div>
+                            <button class="btn btn-danger btn-sm" onclick="deleteRentBot('${phone}')">Revoke</button>
+                        </div>
+                    `;
+                });
+            } catch(e) { console.error("Failed to fetch rentbots", e); }
+        }
+
+        async function pairRentBot() {
+            const phone = document.getElementById('rent-phone').value.trim();
+            if (!phone) return alert("Please enter a WhatsApp number");
+            
+            const btn = document.getElementById('rent-btn');
+            btn.disabled = true; 
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating...';
+            document.getElementById('rent-status').innerText = "Initiating RentBot server...";
+            document.getElementById('rent-code-display').style.display = 'none';
+
+            try {
+                await fetch('/api/rentbot/pair', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phone })
+                });
+            } catch(e) {
+                alert("Failed to connect to server");
+                btn.disabled = false; 
+                btn.innerHTML = 'Request Code';
+            }
+        }
+
+        async function deleteRentBot(phone) {
+            if(!confirm(`Are you sure you want to delete the rent session for +${phone}?`)) return;
+            try {
+                await fetch(`/api/rentbot/${phone}`, { method: 'DELETE' });
+                fetchRentBots();
+            } catch(e) { alert("Failed to delete session."); }
+        }
+
+        function stripAnsi(str) { 
+            return str.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, ''); 
+        }
+
+        function initSSE() {
+            if (evtSource) return;
+
+            evtSource = new EventSource('/api/logs');
+            const terminalBox = document.getElementById('terminal-box');
+            const terminalBoxActive = document.getElementById('terminal-box-active');
+
+            evtSource.addEventListener('log', function(e) {
+                const logData = JSON.parse(e.data);
+                const line = document.createElement('div');
+                line.className = 'terminal-line' + (logData.level === 'error' ? ' text-danger' : '');
+                line.innerText = `> ${stripAnsi(logData.data)}`;
+                
+                terminalBox.appendChild(line);
+                terminalBox.scrollTop = terminalBox.scrollHeight;
+
+                if(terminalBoxActive) {
+                    const clone = line.cloneNode(true);
+                    terminalBoxActive.appendChild(clone);
+                    terminalBoxActive.scrollTop = terminalBoxActive.scrollHeight;
+                }
+            });
+
+            evtSource.addEventListener('pairing_code', function(e) {
+                const data = JSON.parse(e.data);
+                const display = document.getElementById('code-display');
+                display.innerText = data.code;
+                display.style.display = 'inline-block';
+                document.getElementById('copy-code-btn').style.display = 'inline-flex';
+                document.getElementById('status-msg').innerText = "Enter this code in WhatsApp > Linked Devices > Link with phone number";
+                document.getElementById('error-alert').style.display = 'none';
+            });
+            
+            evtSource.addEventListener('rentbot_code', function(e) {
+                const data = JSON.parse(e.data);
+                const display = document.getElementById('rent-code-display');
+                display.innerText = data.code;
+                display.style.display = 'inline-block';
+                document.getElementById('rent-status').innerText = "Pairing Code Generated! Check your WhatsApp linked devices.";
+                
+                const btn = document.getElementById('rent-btn');
+                btn.disabled = false; 
+                btn.innerText = 'Request New Code';
+                document.getElementById('rent-phone').value = '';
+                setTimeout(fetchRentBots, 2000);
+            });
+
+            evtSource.addEventListener('rentbot_error', function(e) {
+                const data = JSON.parse(e.data);
+                document.getElementById('rent-status').innerText = `Error: ${data.message}`;
+                document.getElementById('rent-status').style.color = 'var(--danger)';
+                const btn = document.getElementById('rent-btn');
+                btn.disabled = false; 
+                btn.innerText = 'Try Again';
+            });
+
+            evtSource.addEventListener('fatal_error', function(e) {
+                const data = JSON.parse(e.data);
+                
+                const alertBox = document.getElementById('error-alert');
+                alertBox.innerText = `CRITICAL ERROR:\n${stripAnsi(data.message)}`;
+                alertBox.style.display = 'block';
+                
+                document.getElementById('pair-container').style.display = 'block';
+                document.getElementById('active-dashboard').style.display = 'none';
+                
+                if(currentConfig.usePairingCode) {
+                    document.getElementById('phone-pairing').style.display = 'block';
+                }
+                
+                const display = document.getElementById('code-display');
+                display.innerText = "";
+                display.style.display = 'none';
+                document.getElementById('copy-code-btn').style.display = 'none';
+                document.getElementById('status-msg').innerText = "Please fix the error and try again.";
+
+                const btn = document.getElementById('deploy-btn');
+                btn.disabled = false;
+                btn.innerText = 'Deploy Instance';
+            });
+
+            evtSource.addEventListener('status_update', function(e) { fetchStatus(); });
+        }
+
+        async function fetchStatus() {
+            try {
+                const res = await fetch('/api/status');
+                const data = await res.json();
+                
+                const badge = document.getElementById('status-badge');
+                const controls = document.getElementById('bot-controls');
+                const btnStart = document.getElementById('btn-start');
+                const btnRestart = document.getElementById('btn-restart');
+                const btnStop = document.getElementById('btn-stop');
+                const btnDisconnect = document.getElementById('btn-disconnect');
+                
+                // waiting_setup (Wiped or First time)
+                if (data.status === 'waiting_setup') {
+                    isMainBotOnline = false;
+                    badge.className = 'badge badge-warning';
+                    badge.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Setup Required';
+                    
+                    controls.style.display = 'none';
+                    document.getElementById('pair-container').style.display = 'block';
+                    document.getElementById('active-dashboard').style.display = 'none';
+                    
+                    document.getElementById('rentbot-offline').style.display = 'block';
+                    document.getElementById('rentbot-online').style.display = 'none';
+                    
+                    const dBtn = document.getElementById('deploy-btn');
+                    if(dBtn.innerText.includes('Processing')) {
+                        dBtn.disabled = false;
+                        dBtn.innerText = 'Deploy Instance';
+                    }
+
+                    document.getElementById('code-display').style.display = 'none';
+                    document.getElementById('copy-code-btn').style.display = 'none';
+                } 
+                // running
+                else if (data.status === 'running') {
+                    isMainBotOnline = true;
+                    badge.className = 'badge badge-success';
+                    badge.innerHTML = '<i class="fas fa-check-circle"></i> Online';
+                    
+                    controls.style.display = 'flex';
+                    document.getElementById('pair-container').style.display = 'none';
+                    document.getElementById('active-dashboard').style.display = 'block';
+                    
+                    document.getElementById('engine-status-title').innerText = 'Engine is Online & Running';
+                    document.getElementById('engine-status-desc').innerText = 'Verselor V1 is securely connected to WhatsApp servers. Use the controls above to manage the process.';
+                    document.getElementById('engine-status-icon').className = 'fas fa-check-circle';
+                    document.getElementById('engine-status-icon').style.color = 'var(--success)';
+                    document.getElementById('status-banner-ui').style.borderLeftColor = 'var(--success)';
+
+                    document.getElementById('rentbot-offline').style.display = 'none';
+                    document.getElementById('rentbot-online').style.display = 'block';
+                    
+                    btnStart.disabled = true;
+                    btnRestart.disabled = false;
+                    btnStop.disabled = false;
+                    btnDisconnect.disabled = false;
+                    
+                    const dBtn = document.getElementById('deploy-btn');
+                    dBtn.innerHTML = 'Deploy Instance';
+                    dBtn.disabled = false;
+                }
+                // stopped manually
+                else if (data.status === 'stopped') {
+                    isMainBotOnline = false;
+                    badge.className = 'badge badge-danger';
+                    badge.innerHTML = '<i class="fas fa-stop-circle"></i> Stopped';
+                    
+                    controls.style.display = 'flex';
+                    document.getElementById('pair-container').style.display = 'none';
+                    document.getElementById('active-dashboard').style.display = 'block';
+                    
+                    document.getElementById('engine-status-title').innerText = 'Engine is Stopped';
+                    document.getElementById('engine-status-desc').innerText = 'The bot process has been halted. Click Start or Restart to boot it back up.';
+                    document.getElementById('engine-status-icon').className = 'fas fa-stop-circle';
+                    document.getElementById('engine-status-icon').style.color = 'var(--danger)';
+                    document.getElementById('status-banner-ui').style.borderLeftColor = 'var(--danger)';
+
+                    document.getElementById('rentbot-offline').style.display = 'block';
+                    document.getElementById('rentbot-online').style.display = 'none';
+                    
+                    btnStart.disabled = false;
+                    btnRestart.disabled = false;
+                    btnStop.disabled = true;
+                    btnDisconnect.disabled = false;
+                }
+                // restarting briefly
+                else if (data.status === 'restarting') {
+                    isMainBotOnline = false;
+                    badge.className = 'badge badge-waiting';
+                    badge.innerHTML = '<i class="fas fa-sync-alt fa-spin"></i> Restarting...';
+                    
+                    controls.style.display = 'flex';
+                    btnStart.disabled = true;
+                    btnRestart.disabled = true;
+                    btnStop.disabled = true;
+                    btnDisconnect.disabled = true;
+                }
+                // processing / starting / paired_wait
+                else {
+                    isMainBotOnline = false;
+                    badge.className = 'badge badge-waiting';
+                    badge.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Deploying...';
+                    
+                    controls.style.display = 'flex';
+                    
+                    // Show pairing UI if it's currently generating codes, otherwise active dashboard (like during reboot)
+                    if(data.status === 'paired_wait' || data.status === 'waiting_qr' || data.status === 'processing') {
+                        document.getElementById('pair-container').style.display = 'block';
+                        document.getElementById('active-dashboard').style.display = 'none';
+                        
+                        if (data.code) {
+                            const display = document.getElementById('code-display');
+                            display.innerText = data.code;
+                            display.style.display = 'inline-block';
+                            document.getElementById('copy-code-btn').style.display = 'inline-flex';
+                            document.getElementById('status-msg').innerText = "Enter this code in WhatsApp > Linked Devices > Link with phone number";
+                        }
+                    } else {
+                        document.getElementById('pair-container').style.display = 'none';
+                        document.getElementById('active-dashboard').style.display = 'block';
+                    }
+
+                    document.getElementById('rentbot-offline').style.display = 'block';
+                    document.getElementById('rentbot-online').style.display = 'none';
+                    
+                    btnStart.disabled = true;
+                    btnRestart.disabled = false;
+                    btnStop.disabled = false;
+                    btnDisconnect.disabled = false;
+                }
+            } catch(e) {}
+        }
+    </script>
+</body>
+</html>
