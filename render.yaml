@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: verselor-v1
+    plan: free
+    region: oregon
+    runtime: docker
+    repo: https://github.com/HeavstalTech/Verselor-V1.git
+    branch: main
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 3000
