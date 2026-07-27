@@ -9,7 +9,6 @@
 <a href="https://github.com/HeavstalTech/Verselor-V1/network/members"><img title="Forks" src="https://img.shields.io/github/forks/HeavstalTech/Verselor-V1?color=red&style=flat-square"></a>
 <a href="https://github.com/HeavstalTech/Verselor-V1/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/HeavstalTech/Verselor-V1?label=Watchers&color=blue&style=flat-square"></a>
 <a href="https://github.com/HeavstalTech/Verselor-V1"><img title="Open Source" src="https://img.shields.io/badge/Author-Heavstal%20Tech-red?v=103"></a>
-<a href="https://github.com/HeavstalTech/Verselor-V1/"><img title="Size" src="https://img.shields.io/github/repo-size/HeavstalTech/Verselor-V1?style=flat-square&color=green"></a>
 <a href="https://github.com/HeavstalTech/Verselor-V1/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 <a href="https://github.com/HeavstalTech/Verselor-V1/blob/main/CONTRIBUTORS.md"><img title="Contributors" src="https://img.shields.io/github/contributors/HeavstalTech/Verselor-V1?color=blue&style=flat-square"></a>
 <a href="https://github.com/HeavstalTech/Verselor-V1/blob/main/CODE_OF_CONDUCT.md"><img title="Code of Conduct" src="https://img.shields.io/badge/Code%20of%20Conduct-Adopted-blue.svg?style=flat-square"></a>
