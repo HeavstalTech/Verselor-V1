@@ -1,6 +1,6 @@
 {
   "name": "Verselor-V1",
-  "version": "1.5.2-beta",
+  "version": "1.5.3-beta",
   "description": "A high-performance and feature-rich WhatsApp assistant by Heavstal Tech. Verselor V1 supports cross-device connectivity, shared user hosting, and global language translation, offering a complete suite of tools for chat moderation, media processing, and interactive entertainment. Built by Heavstal Tech - 2026",
   "main": "Connection/start.js",
   "engines": {
@@ -18,7 +18,7 @@
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "@hapi/boom": "^10.0.0",
-    "@heavstaltech/baileys": "^4.4.1",
+    "@heavstaltech/baileys": "^4.4.2",
     "@heavstal/api": "^2.0.5",
     "chalk": "^5.6.2",
     "qrcode-terminal": "^0.12.0",
